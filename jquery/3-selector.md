@@ -1,2 +1,2 @@
--  https://www.khanacademy.org/computing/computer-programming/html-css-js/html-js-dom-access/p/finding-elements-by-id
-- https://www.khanacademy.org/computing/computer-programming/html-js-jquery#jquery-dom-access
+  https://www.khanacademy.org/computing/computer-programming/html-css-js/html-js-dom-access/p/finding-elements-by-id
+  https://www.khanacademy.org/computing/computer-programming/html-js-jquery#jquery-dom-access
