@@ -25,3 +25,8 @@ const options = {
     }
   });
 });
+
+process.on('SIGINT', function() {
+  console.log('EXITING');
+  process.exit(0);
+})
