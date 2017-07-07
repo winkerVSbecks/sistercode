@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "SisterCode JavaScript Workshop",
   "scripts": {
-    "start": "./build.sh",
+    "start": "./build.sh && npm run highlight && npm run serve & node ./watch.js",
+    "highlight": "hljs ./built.html > ./index.html",
     "build": "cleaver index.md",
     "serve": "live-server ./"
   },
@@ -20,6 +21,8 @@
   "homepage": "https://github.com/WinkerVSbecks/sistercode#readme",
   "devDependencies": {
     "cleaver": "^0.8.5",
-    "live-server": "^1.2.0"
+    "highlight.js-cli": "0.0.8",
+    "live-server": "^1.2.0",
+    "watch": "^1.0.2"
   }
 }

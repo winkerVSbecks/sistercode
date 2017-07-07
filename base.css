@@ -1,0 +1,7 @@
+.slide-content img {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+  border: 5px solid #f1f1f1;
+  border-radius: 0;
+}
