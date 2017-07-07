@@ -89,15 +89,7 @@ mv $TEMP_FILE $PRESENTATION_MD
 
 
 ##################################################
-# BUILD                                          #
+# TEARDOWN                                       #
 ##################################################
 
-# Build and serve the file!
-npm run build
-
-# Teardown
-echo Removing files...
-rm -rf $TEMP_PATH $PRESENTATION_MD
-
-# Serve
-npm run serve
+npm run build && rm -rf $TEMP_PATH $PRESENTATION_MD

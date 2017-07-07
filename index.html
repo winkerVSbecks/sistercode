@@ -1,0 +1,711 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>SisterCode Introduction to JavaScript</title>
+  <style type="text/css">
+    body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #222;
+  font-size: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  background-color: #f7f7f7;
+}
+
+.slide-content {
+  width: 800px;
+  height: 600px;
+  overflow: hidden;
+  margin: 80px auto 0 auto;
+  padding: 30px;
+
+  font-weight: 200;
+  font-size: 200%;
+  line-height: 1.375;
+}
+
+.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+}
+
+.arrow {
+  width: 0; height: 0;
+  border: 30px solid #333;
+  float: left;
+  margin-right: 30px;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.prev {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+
+  border-left-width: 0;
+  border-right-width: 50px;
+}
+
+.next {
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
+
+  border-left-width: 50px;
+  border-right-width: 0;
+}
+
+.prev:hover {
+  border-right-color: #888;
+  cursor: pointer;
+}
+
+.next:hover {
+  border-left-color: #888;
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 300%;
+  line-height: 1.2;
+  text-align: center;
+  margin: 170px 0 0;
+}
+
+h2 {
+  font-size: 100%;
+  line-height: 1.2;
+  margin: 5px 0;
+  text-align: center;
+  font-weight: 200;
+}
+
+h3 {
+  font-size: 140%;
+  line-height: 1.2;
+  border-bottom: 1px solid #aaa;
+  margin: 0;
+  padding-bottom: 15px;
+}
+
+ul {
+  padding: 20px 0 0 60px;
+  font-weight: 200;
+  line-height: 1.375;
+}
+
+.author h1 {
+  font-size: 170%;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.author h3 {
+  font-weight: 100;
+  text-align: center;
+  font-size: 95%;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: #44a4dd;
+}
+
+a:hover {
+  color: #66b5ff;
+}
+
+pre {
+  font-size: 60%;
+  line-height: 1.3;
+}
+
+.progress {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  z-index: 1;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 3px;
+  background-color: #b4b4b4;
+
+  -webkit-transition: width 0.05s ease-out;
+  -moz-transition: width 0.05s ease-out;
+  -o-transition: width 0.05s ease-out;
+  transition: width 0.05s ease-out;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 850px) {
+
+  body {
+    font-size: 70%;
+  }
+
+  .slide-content {
+    width: auto;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  h1 {
+    margin-top: 120px;
+  }
+
+  .prev, .prev:hover {
+    border-right-color: rgba(135, 135, 135, 0.5);
+  }
+
+  .next, .next:hover {
+    border-left-color: rgba(135, 135, 135, 0.5);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 50%;
+    overflow: hidden;
+  }
+
+  .slide-content {
+    padding: 10px;
+    margin-top: 10px;
+    height: 340px;
+  }
+
+  h1 {
+    margin-top: 50px;
+  }
+
+  ul {
+    padding-left: 25px;
+  }
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+  }
+
+  @page {
+    size: letter;
+  }
+
+  .hidden {
+    display: inline;
+  }
+
+  html {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  body {
+    margin: 0 auto !important;
+    border: 0;
+    padding: 0;
+    float: none !important;
+    overflow: visible;
+    background: none !important;
+    font-size: 52%;
+  }
+
+  .progress, .controls {
+    display: none;
+  }
+
+  .slide {
+    position: static;
+  }
+
+  .slide-content {
+    border: 1px solid #222;
+    margin-top: 0;
+    margin-bottom: 40px;
+    height: 3.5in;
+    overflow: visible;
+  }
+
+  .slide:nth-child(even) {
+    /* 2 slides per page */
+    page-break-before: always;
+  }
+}
+
+/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #998;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #333;
+  font-weight: bold;
+}
+
+.hljs-number,
+.hljs-literal,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag .hljs-attr {
+  color: #008080;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #d14;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #900;
+  font-weight: bold;
+}
+
+.hljs-subst {
+  font-weight: normal;
+}
+
+.hljs-type,
+.hljs-class .hljs-title {
+  color: #458;
+  font-weight: bold;
+}
+
+.hljs-tag,
+.hljs-name,
+.hljs-attribute {
+  color: #000080;
+  font-weight: normal;
+}
+
+.hljs-regexp,
+.hljs-link {
+  color: #009926;
+}
+
+.hljs-symbol,
+.hljs-bullet {
+  color: #990073;
+}
+
+.hljs-built_in,
+.hljs-builtin-name {
+  color: #0086b3;
+}
+
+.hljs-meta {
+  color: #999;
+  font-weight: bold;
+}
+
+.hljs-deletion {
+  background: #fdd;
+}
+
+.hljs-addition {
+  background: #dfd;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+
+  </style>
+</head>
+<body>
+    <div class="progress">
+    <div class="progress-bar"></div>
+  </div>
+
+  <div class="slide" id="slide-1">
+    <section class="slide-content"><h1 id="getting-to-know-each-other">Getting to know each other</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-2">
+    <section class="slide-content"><ul>
+<li><a href="https://www.khanacademy.org/computing/computer-programming/programming#intro-to-programming">Intro to programming</a></li>
+<li><a href="https://www.khanacademy.org/computing/computer-programming/html-css#web-development-tools">Web development tools</a></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-3">
+    <section class="slide-content"><h1 id="variable-types">Variable Types</h1>
+<p>In JavaScript, different kinds of data have what we call different <code>types</code>. Types determine what we can do with different kinds of data. 
+Everything in JavaScript will have some kind of <code>type</code>. These are the most basic and common ones!</p>
+<h2 id="examples">Examples</h2>
+<ul>
+<li>String: Used to store data as text. Anything between quotes will be understood as a string</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden  `&#39;I am a string.&#39;`" id="slide-4">
+    <section class="slide-content"><ul>
+<li><code>&quot;I&#39;m a string, but I need double-quotes or the computer will get confused by the apostrophe&quot;</code></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden  `&#39;5&#39;` is a string" id="slide-5">
+    <section class="slide-content"><ul>
+<li>Number: Used to store numbers. You can do Math with them!</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden  `4`" id="slide-6">
+    <section class="slide-content"><ul>
+<li>Array: Used to store a list of data. An array is composed of different types, and can mix and match them.</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-7">
+    <section class="slide-content"><p><code>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</code></p>
+</section>
+  </div>
+  <div class="slide hidden  `[&#39;I am a string in an Array&#39;, 2, [&#39;I am an array in another array!&#39;]]`" id="slide-8">
+    <section class="slide-content"><h2 id="operations">Operations</h2>
+<ul>
+<li>You can do operations on data in JavaScript. </li>
+<li>Try typing <code>1 + 2</code> in the console - it will add the numbers</li>
+<li>You can also use the <code>+</code> sign to combine two strings together. Try typing <code>&#39;Hello&#39; + &#39;World&#39;</code></li>
+<li>JavaScript will do its best to figure out what you mean when you mix and match types, but it&#39;s just giving you its best guess so its not always right</li>
+<li>Try typing <code>&#39;2&#39; + 1</code></li>
+<li>Now try typing <code>&#39;2&#39; - 1</code></li>
+<li>Now try <code>&#39;Hello&#39; - &#39;He&#39;</code> - does it do what you think it would?</li>
+<li>JavaScript is silently converting the data you give it to the type it thinks it probably is</li>
+<li><code>NaN</code> means &quot;Not a Number&quot; - this is JavaScript telling you it can&#39;t figure out how to convert your statement and do the operation, because it doesn&#39;t know how to turn &#39;Hello&#39; and &#39;He&#39; into numbers and you can&#39;t subtract one string from another</li>
+</ul>
+<h2 id="other-stuff">Other stuff</h2>
+<ul>
+<li>Types on their own are a big topic but this should give you an idea. They can cause a lot of bugs in the code. You can convert between types.</li>
+</ul>
+<h2 id="excercise">Excercise</h2>
+<ul>
+<li>Enter a number</li>
+<li>Add, multiply, divide and subtract some numbers</li>
+<li>Write your name in the console as <code>&#39;myName&#39;</code></li>
+<li>Write <code>&#39;Hello&#39; + &#39; &#39; + &#39;myName&#39;</code></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-9">
+    <section class="slide-content"><h1 id="variables">Variables</h1>
+<p><a href="https://www.khanacademy.org/computing/computer-programming/programming/variables/p/intro-to-variables">https://www.khanacademy.org/computing/computer-programming/programming/variables/p/intro-to-variables</a></p>
+<h2 id="in-the-console">In the console</h2>
+<ul>
+<li>Try writing your name in the console as <code>myName</code></li>
+<li>JS doesn&#39;t understand what <code>myName</code> means by default, it only understands a certain number of keywords out of the box</li>
+<li>We can tell it what MyName means by using a variable</li>
+</ul>
+<h2 id="what-is-a-variable-">What is a variable?</h2>
+<ul>
+<li>A variable is a piece of code that stores data</li>
+<li>A variable can store any kind of data </li>
+<li>We call it a variable because what kind of data it is can vary!</li>
+<li>A variable is really useful because we can call it back any time by using its <code>name</code></li>
+<li>Try typing <code>const myName = &#39;Name&#39;</code> into the console</li>
+<li>Now try typing <code>myName</code> and see what happens</li>
+</ul>
+<h2 id="anatomy-of-a-variable-declaration">Anatomy of a variable declaration</h2>
+<ul>
+<li>Making a variable is often called a variable declaration. We say we <code>declare</code> a variable when we make a new variable.</li>
+<li>A variable declaration looks like this: <code>const name = &#39;Renee&#39;</code></li>
+<li>Variables consist of four parts: a variable keyword, a variable name, an assignment symbol, and a variable value.</li>
+</ul>
+<h2 id="names">Names</h2>
+<ul>
+<li><code>name</code> is the variable name. This is completely up to you - you can name your variables whatever you want. Try making a new name <code>const pizza = &#39;Name&#39;</code> and you&#39;ll see it work just the same. When you&#39;re coding, you&#39;ll want to try to name your variables in a way that someone who has never seen your program before can easily understand the type of data they might contain. </li>
+<li>Variables can be named anything. We like to use <code>camelCase</code> in JavaScript to make them easily readable.</li>
+<li>There are some things you can&#39;t name your variable because they are reserved by JavaScript to mean something else. For example, you can&#39;t name your variable <code>const</code> or <code>var</code>. You also can&#39;t use numbers.</li>
+</ul>
+<h2 id="values">Values</h2>
+<ul>
+<li>The variable value is the data you want the variable to hold. In this case, it&#39;s <code>&#39;Renee&#39;</code>. We can use it to hold any kind of data. Try <code>const myNumber = 5</code> for instance. You can also do operations inside of a variable declaration, such as <code>const mySum = 1 + 3</code>;</li>
+</ul>
+<h2 id="keyword">Keyword</h2>
+<ul>
+<li><code>const</code> is the variable keyword in this case. This keyword lets JavaScript know we are about to declare a variable. For this part of the variable declaration, you need to use a reserved word that JavaScript will recognize. We use <code>const</code> when we don&#39;t want the value of the variable to change. We could also use <code>let</code> if we want to change its value. </li>
+</ul>
+<h2 id="declaration">Declaration</h2>
+<ul>
+<li>Variables look kind of like an equation, but they aren&#39;t quite. What we are doing here is <code>declaring</code> that the left side will equal the right side. The computer will just say &quot;okay&quot;. We could say <code>const number5 = 4</code> and the computer will just say &quot;Okay, cool, when you type <code>number5</code> I will give you <code>4</code>&quot;.</li>
+</ul>
+<h2 id="ok-i-have-a-variable-now-what-">Ok, I have a variable, now what?</h2>
+<ul>
+<li>You can use your variable in your code to represent the <code>value</code> you declared it with</li>
+<li>Variables are cool because you can use them kind of like placeholders; you don&#39;t need to know EXACTLY what&#39;s in them, only kind of what&#39;s in them</li>
+<li>Try making the <code>myName</code> variable again and then in the console type <code>&#39;Hello &#39;+ myName</code></li>
+</ul>
+<h2 id="exercise">Exercise</h2>
+<ul>
+<li>Make 2 variables with a value of <code>1</code> and <code>2</code></li>
+<li>Make a third variable and add your two variables together</li>
+<li>Make 2 variables with values of <code>Hello</code> and <code>World</code></li>
+<li>Make a third variable and add your two variables together</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-10">
+    <section class="slide-content"><p><a href="https://www.khanacademy.org/computing/computer-programming/programming#logic-if-statements">https://www.khanacademy.org/computing/computer-programming/programming#logic-if-statements</a></p>
+<ul>
+<li>Comparisons</li>
+<li>Booleans</li>
+<li>Evaluation</li>
+<li>Blocks</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-11">
+    <section class="slide-content"><p><a href="https://www.khanacademy.org/computing/computer-programming/programming#looping">https://www.khanacademy.org/computing/computer-programming/programming#looping</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-12">
+    <section class="slide-content"><h3 id="-math-random-and-friends"><code>math.random</code> and friends</h3>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-13">
+    <section class="slide-content"><p><a href="https://www.khanacademy.org/computing/computer-programming/programming/functions/p/functions">https://www.khanacademy.org/computing/computer-programming/programming/functions/p/functions</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-14">
+    <section class="slide-content"><p><a href="https://www.khanacademy.org/computing/computer-programming/html-css#intro-to-html">https://www.khanacademy.org/computing/computer-programming/html-css#intro-to-html</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-15">
+    <section class="slide-content"><p><a href="https://www.khanacademy.org/computing/computer-programming/html-js-jquery">https://www.khanacademy.org/computing/computer-programming/html-js-jquery</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-16">
+    <section class="slide-content"><p><a href="https://www.khanacademy.org/computing/computer-programming/html-css-js/html-js-dom-access/p/finding-elements-by-id">https://www.khanacademy.org/computing/computer-programming/html-css-js/html-js-dom-access/p/finding-elements-by-id</a>
+  <a href="https://www.khanacademy.org/computing/computer-programming/html-js-jquery#jquery-dom-access">https://www.khanacademy.org/computing/computer-programming/html-js-jquery#jquery-dom-access</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-17">
+    <section class="slide-content"><p><a href="https://www.khanacademy.org/computing/computer-programming/html-css-js/js-and-the-dom/p/putting-js-in-a-webpage">https://www.khanacademy.org/computing/computer-programming/html-css-js/js-and-the-dom/p/putting-js-in-a-webpage</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-18">
+    <section class="slide-content"><p><a href="https://www.khanacademy.org/computing/computer-programming/html-css-js/html-js-dom-access/p/finding-elements-by-id">https://www.khanacademy.org/computing/computer-programming/html-css-js/html-js-dom-access/p/finding-elements-by-id</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-19">
+    <section class="slide-content"><p><a href="https://www.khanacademy.org/computing/computer-programming/html-js-jquery/dom-modification-with-jquery/p/modifying-elements-with-jquery">https://www.khanacademy.org/computing/computer-programming/html-js-jquery/dom-modification-with-jquery/p/modifying-elements-with-jquery</a></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-20">
+    <section class="slide-content"><h1 id="final-project">Final project</h1>
+</section>
+  </div>
+  <div class="slide hidden author-slide" id="slide-21">
+    <section class="slide-content"><div class="author">
+  <h1 class="name">Varun Vachhar, Renee Vrantsidis, Houssein Djirdeh, Raven Avalon</h1>
+</div>
+</section>
+  </div>
+
+  <div class="controls">
+    <div class="arrow prev"></div>
+    <div class="arrow next"></div>
+  </div>
+
+
+  <script type="text/javascript">
+    /**
+ * Returns the current page number of the presentation.
+ */
+function currentPosition() {
+  return parseInt(document.querySelector('.slide:not(.hidden)').id.slice(6));
+}
+
+
+/**
+ * Navigates forward n pages
+ * If n is negative, we will navigate in reverse
+ */
+function navigate(n) {
+  var position = currentPosition();
+  var numSlides = document.getElementsByClassName('slide').length;
+
+  /* Positions are 1-indexed, so we need to add and subtract 1 */
+  var nextPosition = (position - 1 + n) % numSlides + 1;
+
+  /* Normalize nextPosition in-case of a negative modulo result */
+  nextPosition = (nextPosition - 1 + numSlides) % numSlides + 1;
+
+  document.getElementById('slide-' + position).classList.add('hidden');
+  document.getElementById('slide-' + nextPosition).classList.remove('hidden');
+
+  updateProgress();
+  updateURL();
+  updateTabIndex();
+}
+
+
+/**
+ * Updates the current URL to include a hashtag of the current page number.
+ */
+function updateURL() {
+  try {
+    window.history.replaceState({} , null, '#' + currentPosition());
+  } catch (e) {
+    window.location.hash = currentPosition();
+  }
+}
+
+
+/**
+ * Sets the progress indicator.
+ */
+function updateProgress() {
+  var progressBar = document.querySelector('.progress-bar');
+
+  if (progressBar !== null) {
+    var numSlides = document.getElementsByClassName('slide').length;
+    var position = currentPosition() - 1;
+    var percent = (numSlides === 1) ? 100 : 100 * position / (numSlides - 1);
+    progressBar.style.width = percent.toString() + '%';
+  }
+}
+
+
+/**
+ * Removes tabindex property from all links on the current slide, sets
+ * tabindex = -1 for all links on other slides. Prevents slides from appearing
+ * out of control.
+ */
+function updateTabIndex() {
+  var allLinks = document.querySelectorAll('.slide a');
+  var position = currentPosition();
+  var currentPageLinks = document.getElementById('slide-' + position).querySelectorAll('a');
+  var i;
+
+  for (i = 0; i < allLinks.length; i++) {
+    allLinks[i].setAttribute('tabindex', -1);
+  }
+
+  for (i = 0; i < currentPageLinks.length; i++) {
+    currentPageLinks[i].removeAttribute('tabindex');
+  }
+}
+
+/**
+ * Determines whether or not we are currently in full screen mode
+ */
+function isFullScreen() {
+  return document.fullscreenElement ||
+         document.mozFullScreenElement ||
+         document.webkitFullscreenElement ||
+         document.msFullscreenElement;
+}
+
+/**
+ * Toggle fullScreen mode on document element.
+ * Works on chrome (>= 15), firefox (>= 9), ie (>= 11), opera(>= 12.1), safari (>= 5).
+ */
+function toggleFullScreen() {
+  /* Convenient renames */
+  var docElem = document.documentElement;
+  var doc = document;
+
+  docElem.requestFullscreen =
+      docElem.requestFullscreen ||
+      docElem.msRequestFullscreen ||
+      docElem.mozRequestFullScreen ||
+      docElem.webkitRequestFullscreen.bind(docElem, Element.ALLOW_KEYBOARD_INPUT);
+
+  doc.exitFullscreen =
+      doc.exitFullscreen ||
+      doc.msExitFullscreen ||
+      doc.mozCancelFullScreen ||
+      doc.webkitExitFullscreen;
+
+  isFullScreen() ? doc.exitFullscreen() : docElem.requestFullscreen();
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Update the tabindex to prevent weird slide transitioning
+  updateTabIndex();
+
+  // If the location hash specifies a page number, go to it.
+  var page = window.location.hash.slice(1);
+  if (page) {
+    navigate(parseInt(page) - 1);
+  }
+
+  document.onkeydown = function (e) {
+    var kc = e.keyCode;
+
+    // left, down, H, J, backspace, PgUp - BACK
+    // up, right, K, L, space, PgDn - FORWARD
+    // enter - FULLSCREEN
+    if (kc === 37 || kc === 40 || kc === 8 || kc === 72 || kc === 74 || kc === 33) {
+      navigate(-1);
+    } else if (kc === 38 || kc === 39 || kc === 32 || kc === 75 || kc === 76 || kc === 34) {
+      navigate(1);
+    } else if (kc === 13) {
+      toggleFullScreen();
+    }
+  };
+
+  if (document.querySelector('.next') && document.querySelector('.prev')) {
+    document.querySelector('.next').onclick = function (e) {
+      e.preventDefault();
+      navigate(1);
+    };
+
+    document.querySelector('.prev').onclick = function (e) {
+      e.preventDefault();
+      navigate(-1);
+    };
+  }
+});
+
+
+  </script>
+</body>
+</html>
