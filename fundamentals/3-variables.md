@@ -20,6 +20,9 @@ https://www.khanacademy.org/computing/computer-programming/programming/variables
 - A variable declaration looks like this: `const name = 'Renee'`
 - Variables consist of four parts: a variable keyword, a variable name, an assignment symbol, and a variable value.
 
+## Declaration
+- Variables look kind of like an equation, but they aren't quite. What we are doing here is `declaring` that the left side will equal the right side. The computer will just say "okay". We could say `const number5 = 4` and the computer will just say "Okay, cool, when you type `number5` I will give you `4`".
+
 ## Names
 - `name` is the variable name. This is completely up to you - you can name your variables whatever you want. Try making a new name `const pizza = 'Name'` and you'll see it work just the same. When you're coding, you'll want to try to name your variables in a way that someone who has never seen your program before can easily understand the type of data they might contain. 
 - Variables can be named anything. We like to use `camelCase` in JavaScript to make them easily readable.
@@ -30,9 +33,6 @@ https://www.khanacademy.org/computing/computer-programming/programming/variables
 
 ## Keyword
 - `const` is the variable keyword in this case. This keyword lets JavaScript know we are about to declare a variable. For this part of the variable declaration, you need to use a reserved word that JavaScript will recognize. We use `const` when we don't want the value of the variable to change. We could also use `let` if we want to change its value. 
-
-## Declaration
-- Variables look kind of like an equation, but they aren't quite. What we are doing here is `declaring` that the left side will equal the right side. The computer will just say "okay". We could say `const number5 = 4` and the computer will just say "Okay, cool, when you type `number5` I will give you `4`".
 
 ## Ok, I have a variable, now what?
 - You can use your variable in your code to represent the `value` you declared it with
