@@ -10,7 +10,7 @@ const options = {
 
 
 // Directories to watch
-['./fundamentals', './introduction', './final', './jquery'].forEach(path => {
+['./fundamentals', './introduction', './HTML', './final', './jquery'].forEach(path => {
   watch.watchTree(path, options, (f, curr, prev) => {
     if (typeof f === 'object' && curr === null && prev === null) {
       console.log('Watching directories...');
@@ -29,4 +29,4 @@ const options = {
 process.on('SIGINT', function() {
   console.log('EXITING');
   process.exit(0);
-})
+});
