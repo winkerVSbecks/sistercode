@@ -13,12 +13,12 @@
 ## within the section. This file must be run from the root of the dir.
 
 
-PRESENTATION_DIRS=$(echo /{introduction,fundamentals,jquery,final})
+PRESENTATION_DIRS=$(echo /{introduction,HTML,fundamentals,jquery,final})
 WORKING_DIR=$(pwd)
 PRESENTATION_MD=$WORKING_DIR/index.md
 PRESENTATION_HTML=$WORKING_DIR/index.html
 HEADER_FILE=$WORKING_DIR/header.md
-ASSETS_PATH=$WORKING_DIR/assets
+ASSETS_PATH=./assets
 TEMP_PATH=$WORKING_DIR/.tmp
 TEMP_FILE=$TEMP_PATH/temp.txt
 
@@ -28,18 +28,20 @@ TEMP_FILE=$TEMP_PATH/temp.txt
 
 # Find and replace string "ASSETS_PATH" with actual ASSETS_PATH var
 replaceVariable() {
-  sed -i.bak "s-ASSETS_PATH-$ASSETS_PATH-g" $1
-  rm -rf $1.bak
+  cp $1 $1-copy
+  sed -i.bak "s-ASSETS_PATH-$ASSETS_PATH-g" $1-copy
+  rm -rf $1-copy.bak
 }
 
 # Add contents of file onto the end of TEMP file
 concatFileWithTemp() {
   replaceVariable $1
   # End of template string must not be indented...
-  TEMPLATE="$(cat $1)
+  TEMPLATE="$(cat $1-copy)
 
 --"
   echo "$TEMPLATE" >> $TEMP_FILE
+  rm -rf $1-copy
 }
 
 ##################################################
