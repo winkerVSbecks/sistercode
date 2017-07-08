@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WinkerVSbecks/sistercode.git"
+    "url": "git+https://github.com/winkerVSbecks/sistercode.git"
   },
   "keywords": [],
   "author": "TODO: Add authors",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/WinkerVSbecks/sistercode/issues"
+    "url": "https://github.com/winkerVSbecks/sistercode/issues"
   },
-  "homepage": "https://github.com/WinkerVSbecks/sistercode#readme",
+  "homepage": "https://github.com/winkerVSbecks/sistercode#readme",
   "devDependencies": {
     "cleaver": "^0.8.5",
     "live-server": "^1.2.0",
