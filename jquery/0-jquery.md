@@ -1,2 +1,0 @@
-# jQuery
-## A JavaScript library
