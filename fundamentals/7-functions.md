@@ -11,17 +11,38 @@
 
 --
 
+### Referrencing your function VS 'Calling' your function
+
+Once you've created a function, you can do two things with it:
+
+- You can `call` it: This means telling your function to actually execute the code in it's body
+- You can "reference" it: This means just talking about the function, but not actually executing it's code.
+
+When you `call` a function, you attach a pair of parentheses `()` to the end of it's name. For example, if you have a function
+called `sayHello`, you would call it like this: `sayHello()`. Any arguments you have will go between the parentheses.
+
+Referencing a function is done simply by writing it's name. With our previous example, you just have to leave off the parenthesis.
+`sayHello`.
+
+--
+
+### Give this a try with the `console.log` function!
+
+Type `console.log` in your console, and it should return something that looks like this:
+
+![Reference console.log](ASSETS_PATH/fundamentals/functions/ref-console-log.png)
+
+If you call the function like `console.log('any string!');` it should print the string `'any string!'` to the console.
+
+--
+
 ### Passing information to your function
 
 When functions are defined, you specify what information it will accept. You do this by adding variable
 names into the parentheses of your function:
 
 ```JavaScript
-function myCoolFunction (firstVar, secondVar, thirdVar) {...}
-```
-When you're ready to use the function, you can pass whatever you want in as those three variables, for example:
-
-```JavaScript
+function myCoolFunction(firstVar, secondVar, thirdVar) {...}
 myCoolFunction(5, 'hello', 52.3);
 ```
 The function body will then use those values in place of the variables you set as arguments!
@@ -39,20 +60,13 @@ function someName() {
   // Your instructions go here!
 }
 ```
-
-The function body is where all the magic happens, and you can use any variables you specified as arguments!
-
---
-
-# Function without names?
-
 --
 
 # Let's see some examples!
 
 --
 
-### Simple adding function
+### Example: Simple adding function
 
 ![Adding function](ASSETS_PATH/fundamentals/functions/add-func.png)
 
@@ -62,25 +76,19 @@ The function body is where all the magic happens, and you can use any variables 
 
 The keyword `return` is used to get information out of the function to be used elsewhere!
 You don't need to include the `return` keyword, but you'll find you want your function to return some data to you more often
-than not! Be aware that once you return from a function, that function is complete:
+than not. Be aware that once you return from a function, that function is complete. Anything after the return is `unreachable code`.
 
 ![Return keyword exits function](ASSETS_PATH/fundamentals/functions/return-keyword.png)
 
 --
 
-### A Function with no arguments
+### Example: A Function with no arguments
 
 ![No Arguments Function](ASSETS_PATH/fundamentals/functions/no-args-func.png)
 
 --
 
-### An Anonymous function!
-
-![Anonymous Function](ASSETS_PATH/fundamentals/functions/anon-func.png)
-
---
-
-### Exercise: Build your own function!
+### Exercise (3mins): Build your own function!
 
 Build a simple named function with one or more lines of code in the body.
 

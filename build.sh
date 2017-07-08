@@ -18,6 +18,7 @@ WORKING_DIR=$(pwd)
 PRESENTATION_MD=$WORKING_DIR/index.md
 PRESENTATION_HTML=$WORKING_DIR/index.html
 HEADER_FILE=$WORKING_DIR/header.md
+BAD_CLEAVER_FILE=$WORKING_DIR/index-cleaver.html
 ASSETS_PATH=./assets
 TEMP_PATH=$WORKING_DIR/.tmp
 TEMP_FILE=$TEMP_PATH/temp.txt
@@ -49,7 +50,7 @@ concatFileWithTemp() {
 ##################################################
 
 # Remove older files
-rm -rf $TEMP_PATH $PRESENTATION_MD $PRESENTATION_HTML
+rm -rf $TEMP_PATH $PRESENTATION_MD $PRESENTATION_HTML $BAD_CLEAVER_FILE
 
 # Create temp files/presentation markdown file
 mkdir $TEMP_PATH

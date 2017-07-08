@@ -5,3 +5,7 @@
   border: 5px solid #f1f1f1;
   border-radius: 0;
 }
+
+.slide-content img[src*="for-array.png"] {
+  width: 90%;
+}

@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "SisterCode JavaScript Workshop",
   "scripts": {
-    "start": "./build.sh && npm run serve & node ./watch.js",
+    "start": "./build.sh && npm run serve",
     "build": "cleaver index.md",
-    "serve": "live-server ./"
+    "serve": "live-server ./ & node ./watch.js"
   },
   "repository": {
     "type": "git",
