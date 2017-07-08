@@ -785,161 +785,217 @@ your HTML right in the browser when designing an interface.</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-23">
-    <section class="slide-content"><h1 id="variable-types">Variable Types</h1>
-<p>In JavaScript, different kinds of data have what we call different <code>types</code>. Types determine what we can do with different kinds of data. 
-Everything in JavaScript will have some kind of <code>type</code>. These are the most basic and common ones!</p>
-<h2 id="examples">Examples</h2>
+    <section class="slide-content"><h1 id="data-types">Data Types</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-24">
+    <section class="slide-content"><h1 id="string">String</h1>
+<p>Used to store data as text. Anything between quotes will be understood as a string </p>
+<pre><code class="lang-js"><span class="hljs-string">'I am a string.'</span>
+<span class="hljs-string">"I'm a string, but I need double-quotes or the computer will get confused by the apostrophe"</span>
+<span class="hljs-string">'5'</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-25">
+    <section class="slide-content"><h1 id="number">Number</h1>
+<p>Used to store numbers.</p>
+<pre><code class="lang-js"><span class="hljs-number">4</span>
+<span class="hljs-number">3.333</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-26">
+    <section class="slide-content"><h1 id="array">Array</h1>
+<p>Used to store a list of data. An array is composed of different types, and can mix and match them. We&#39;ll talk more about them later.</p>
 <ul>
-<li>String: Used to store data as text. Anything between quotes will be understood as a string</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden  `&#39;I am a string.&#39;`" id="slide-24">
-    <section class="slide-content"><ul>
-<li><code>&quot;I&#39;m a string, but I need double-quotes or the computer will get confused by the apostrophe&quot;</code></li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden  `&#39;5&#39;` is a string" id="slide-25">
-    <section class="slide-content"><ul>
-<li>Number: Used to store numbers. You can do Math with them!</li>
-</ul>
-</section>
-  </div>
-  <div class="slide hidden  `4`" id="slide-26">
-    <section class="slide-content"><ul>
-<li>Array: Used to store a list of data. An array is composed of different types, and can mix and match them.</li>
+<li><code>[1, 2, 3, 4, 5]</code><pre><code class="lang-js">[
+<span class="hljs-string">'I am a string in an Array'</span>, 
+<span class="hljs-number">2</span>, 
+[<span class="hljs-string">'I am an array in another array!'</span>],
+]</code></pre>
+</li>
 </ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-27">
-    <section class="slide-content"><p><code>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</code></p>
+    <section class="slide-content"><h1 id="boolean">Boolean</h1>
+<p>Always stores either <code>true</code> or <code>false</code>. That&#39;s it!!</p>
+<pre><code class="lang-js"><span class="hljs-literal">true</span>
+<span class="hljs-literal">false</span></code></pre>
 </section>
   </div>
-  <div class="slide hidden  `[&#39;I am a string in an Array&#39;, 2, [&#39;I am an array in another array!&#39;]]`" id="slide-28">
-    <section class="slide-content"><h2 id="operations">Operations</h2>
-<ul>
-<li>You can do operations on data in JavaScript. </li>
-<li>Try typing <code>1 + 2</code> in the console - it will add the numbers</li>
-<li>You can also use the <code>+</code> sign to combine two strings together. Try typing <code>&#39;Hello&#39; + &#39;World&#39;</code></li>
-<li>JavaScript will do its best to figure out what you mean when you mix and match types, but it&#39;s just giving you its best guess so its not always right</li>
-<li>Try typing <code>&#39;2&#39; + 1</code></li>
-<li>Now try typing <code>&#39;2&#39; - 1</code></li>
-<li>Now try <code>&#39;Hello&#39; - &#39;He&#39;</code> - does it do what you think it would?</li>
-<li>JavaScript is silently converting the data you give it to the type it thinks it probably is</li>
-<li><code>NaN</code> means &quot;Not a Number&quot; - this is JavaScript telling you it can&#39;t figure out how to convert your statement and do the operation, because it doesn&#39;t know how to turn &#39;Hello&#39; and &#39;He&#39; into numbers and you can&#39;t subtract one string from another</li>
-</ul>
-<h2 id="other-stuff">Other stuff</h2>
-<ul>
-<li>Types on their own are a big topic but this should give you an idea. They can cause a lot of bugs in the code. You can convert between types.</li>
-</ul>
-<h2 id="excercise">Excercise</h2>
-<ul>
-<li>Enter a number</li>
-<li>Add, multiply, divide and subtract some numbers</li>
-<li>Write your name in the console as <code>&#39;myName&#39;</code></li>
-<li>Write <code>&#39;Hello&#39; + &#39; &#39; + &#39;myName&#39;</code></li>
-</ul>
+  <div class="slide hidden" id="slide-28">
+    <section class="slide-content"><h1 id="undefined">Undefined</h1>
+<p>This means that no data or data type has been defined yet. You&#39;ll see this in the dev tools console sometimes. </p>
+<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'The console is silly sometimes'</span>);
+=&gt; <span class="hljs-literal">undefined</span></code></pre>
 </section>
   </div>
   <div class="slide hidden" id="slide-29">
-    <section class="slide-content"><h1 id="variables">Variables</h1>
-<p><a href="https://www.khanacademy.org/computing/computer-programming/programming/variables/p/intro-to-variables">https://www.khanacademy.org/computing/computer-programming/programming/variables/p/intro-to-variables</a></p>
-<h2 id="in-the-console">In the console</h2>
+    <section class="slide-content"><h1 id="other-types">Other Types</h1>
 <ul>
-<li>Try writing your name in the console as <code>myName</code></li>
-<li>JS doesn&#39;t understand what <code>myName</code> means by default, it only understands a certain number of keywords out of the box</li>
-<li>We can tell it what MyName means by using a variable</li>
-</ul>
-<h2 id="what-is-a-variable-">What is a variable?</h2>
-<ul>
-<li>A variable is a piece of code that stores data</li>
-<li>A variable can store any kind of data </li>
-<li>We call it a variable because what kind of data it is can vary!</li>
-<li>A variable is really useful because we can call it back any time by using its <code>name</code></li>
-<li>Try typing <code>const myName = &#39;Name&#39;</code> into the console</li>
-<li>Now try typing <code>myName</code> and see what happens</li>
-</ul>
-<h2 id="anatomy-of-a-variable-declaration">Anatomy of a variable declaration</h2>
-<ul>
-<li>Making a variable is often called a variable declaration. We say we <code>declare</code> a variable when we make a new variable.</li>
-<li>A variable declaration looks like this: <code>const name = &#39;Renee&#39;</code></li>
-<li>Variables consist of four parts: a variable keyword, a variable name, an assignment symbol, and a variable value.</li>
-</ul>
-<h2 id="declaration">Declaration</h2>
-<ul>
-<li>Variables look kind of like an equation, but they aren&#39;t quite. What we are doing here is <code>declaring</code> that the left side will equal the right side. The computer will just say &quot;okay&quot;. We could say <code>const number5 = 4</code> and the computer will just say &quot;Okay, cool, when you type <code>number5</code> I will give you <code>4</code>&quot;.</li>
-</ul>
-<h2 id="names">Names</h2>
-<ul>
-<li><code>name</code> is the variable name. This is completely up to you - you can name your variables whatever you want. Try making a new name <code>const pizza = &#39;Name&#39;</code> and you&#39;ll see it work just the same. When you&#39;re coding, you&#39;ll want to try to name your variables in a way that someone who has never seen your program before can easily understand the type of data they might contain. </li>
-<li>Variables can be named anything. We like to use <code>camelCase</code> in JavaScript to make them easily readable.</li>
-<li>There are some things you can&#39;t name your variable because they are reserved by JavaScript to mean something else. For example, you can&#39;t name your variable <code>const</code> or <code>var</code>. You also can&#39;t use numbers.</li>
-</ul>
-<h2 id="values">Values</h2>
-<ul>
-<li>The variable value is the data you want the variable to hold. In this case, it&#39;s <code>&#39;Renee&#39;</code>. We can use it to hold any kind of data. Try <code>const myNumber = 5</code> for instance. You can also do operations inside of a variable declaration, such as <code>const mySum = 1 + 3</code>;</li>
-</ul>
-<h2 id="keyword">Keyword</h2>
-<ul>
-<li><code>const</code> is the variable keyword in this case. This keyword lets JavaScript know we are about to declare a variable. For this part of the variable declaration, you need to use a reserved word that JavaScript will recognize. We use <code>const</code> when we don&#39;t want the value of the variable to change. We could also use <code>let</code> if we want to change its value. </li>
-</ul>
-<h2 id="ok-i-have-a-variable-now-what-">Ok, I have a variable, now what?</h2>
-<ul>
-<li>You can use your variable in your code to represent the <code>value</code> you declared it with</li>
-<li>Variables are cool because you can use them kind of like placeholders; you don&#39;t need to know EXACTLY what&#39;s in them, only kind of what&#39;s in them</li>
-<li>Try making the <code>myName</code> variable again and then in the console type <code>&#39;Hello &#39;+ myName</code></li>
-</ul>
-<h2 id="exercise">Exercise</h2>
-<ul>
-<li>Make 2 variables with a value of <code>1</code> and <code>2</code></li>
-<li>Make a third variable and add your two variables together</li>
-<li>Make 2 variables with values of <code>Hello</code> and <code>World</code></li>
-<li>Make a third variable and add your two variables together</li>
+<li>Objects</li>
+<li>Null</li>
 </ul>
 </section>
   </div>
   <div class="slide hidden" id="slide-30">
-    <section class="slide-content"><h1 id="control-flow">Control Flow</h1>
-<h2 id="if-else">If/Else</h2>
-<ul>
-<li>We want our program to behave differently in different circumstances</li>
-<li>In programming this might look like</li>
-</ul>
-<h2 id="anatomy-of-an-if-statement">Anatomy of an if statement</h2>
-<ul>
-<li>Condition</li>
-<li>Execution/Body</li>
-</ul>
-<h3 id="true-or-false">True or False</h3>
-<ul>
-<li>What&#39;s a Boolean?</li>
-<li>How does it work</li>
-</ul>
-<h3 id="comparison-operators">Comparison operators</h3>
-<ul>
-<li>===</li>
-<li>&lt; / &gt;</li>
-<li>&lt;= / &gt;=</li>
-<li>&amp;&amp;</li>
-<li>||</li>
-</ul>
-<h3 id="execution-block">Execution block</h3>
-<ul>
-<li>Scope is confined</li>
-</ul>
-<h2 id="else-and-else-if">Else and Else If</h2>
-<h2 id="nesting-if-statements">Nesting If statements</h2>
-<h2 id="references">References</h2>
-<p><a href="https://www.khanacademy.org/computing/computer-programming/programming#logic-if-statements">https://www.khanacademy.org/computing/computer-programming/programming#logic-if-statements</a></p>
+    <section class="slide-content"><h1 id="operations">Operations</h1>
+<p>An operation is a calculation, similar to math
+Different data types can do different operations</p>
 </section>
   </div>
   <div class="slide hidden" id="slide-31">
+    <section class="slide-content"><h1 id="nan">NaN</h1>
+<p>&quot;Not a Number&quot; - the computer couldn&#39;t figure out what you were doing</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-32">
+    <section class="slide-content"><h1 id="computers-are-dumb">Computers are dumb</h1>
+<p>JavaScript will its best to figure out what you mean, but it&#39;s best if it doesn&#39;t have to guess</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-33">
+    <section class="slide-content"><h1 id="variables">Variables</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-34">
+    <section class="slide-content"><h1 id="a-variable-is-a-piece-of-stored-data">A variable is a piece of stored data</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-35">
+    <section class="slide-content"><h1 id="a-variable-can-be-anything">A variable can be anything</h1>
+<p>It&#39;s kind of like a placeholder</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-36">
+    <section class="slide-content"><h1 id="making-a-variable">Making a variable</h1>
+<p><img src="./assets/fundamentals/variables/variableanatomy.png" alt="Variable Example!"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-37">
+    <section class="slide-content"><h1 id="declaration">Declaration</h1>
+<p><code>const</code>, <code>let</code> or <code>var</code> </p>
+<p><img src="./assets/fundamentals/variables/variableanatomy.png" alt="Variable Example!"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-38">
+    <section class="slide-content"><h1 id="what-s-the-difference-">What&#39;s the difference?</h1>
+<ul>
+<li><code>const</code> cannot be overwritten</li>
+<li><code>let</code> can be overwritten</li>
+<li><code>var</code> is old</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-39">
+    <section class="slide-content"><pre><code class="lang-js"><span class="hljs-keyword">let</span> myName = <span class="hljs-string">'Renee'</span>;
+myName = <span class="hljs-string">'renvrant'</span>;
+
+<span class="hljs-comment">// myName is now 'renvrant'</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-40">
+    <section class="slide-content"><h1 id="variable-name">Variable Name</h1>
+<p>Your variable name is how you use it in code</p>
+<p><img src="./assets/fundamentals/variables/variableanatomy.png" alt="Variable Example!"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-41">
+    <section class="slide-content"><pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(myName)
+=&gt; <span class="hljs-string">'Renee'</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-42">
+    <section class="slide-content"><h1 id="assignment">Assignment</h1>
+<p>It&#39;s an assignment sign, not an equals sign!</p>
+<p><img src="./assets/fundamentals/variables/variableanatomy.png" alt="Variable Example!"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-43">
+    <section class="slide-content"><h1 id="value">Value</h1>
+<p>The piece of data the variable represents</p>
+<p><img src="./assets/fundamentals/variables/variableanatomy.png" alt="Variable Example!"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-44">
+    <section class="slide-content"><h1 id="if-else">If/Else</h1>
+<p>Teaching our program to make decisions</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-45">
+    <section class="slide-content"><h1 id="if-statements-let-our-program-do-some-things-and-not-others">If Statements let our program do some things and not others</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-46">
+    <section class="slide-content"><p><img src="./assets/fundamentals/ifelse/ifelse.png" alt="Variable Example!"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-47">
+    <section class="slide-content"><h1 id="condition">Condition</h1>
+<p>Code that your program will check first to see how it should proceed</p>
+<p><img src="./assets/fundamentals/ifelse/ifelse.png" alt="Variable Example!"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-48">
+    <section class="slide-content"><h1 id="your-condition-is-a-boolean">Your condition is a Boolean</h1>
+<p>JavaScript will turn it into either <code>true</code> or <code>false</code></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-49">
+    <section class="slide-content"><h1 id="body">Body</h1>
+<p>Code that your program will only run when the condition is <code>true</code></p>
+<p><img src="./assets/fundamentals/ifelse/ifelse.png" alt="Variable Example!"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-50">
+    <section class="slide-content"><h1 id="unreachable-code">Unreachable code</h1>
+<pre><code class="lang-js"><span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) { <span class="hljs-comment">// This is the Boolean type true, so condition will always be true</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'I will always be printed!'</span>);
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'What about me?'</span>); <span class="hljs-comment">// This will never run</span>
+}</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-51">
+    <section class="slide-content"><pre><code class="lang-js"><span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) { <span class="hljs-comment">// This is the Boolean type true, so condition will always be true</span>
+  <span class="hljs-keyword">const</span> reachable = <span class="hljs-string">'I am reachable!'</span>;
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-keyword">const</span> unreachable = <span class="hljs-string">'I am not reachable!'</span>;
+}
+
+<span class="hljs-built_in">console</span>.log(reachable);
+=&gt; <span class="hljs-string">'I am reachable!'</span>;
+
+<span class="hljs-built_in">console</span>.log(unreachable);
+=&gt; <span class="hljs-built_in">ReferenceError</span>: unreachable is not defined</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-52">
+    <section class="slide-content"><h1 id="comparison-operators">Comparison operators</h1>
+<p>Comparisons operators let us build conditions</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-53">
+    <section class="slide-content"><pre><code class="lang-js">=== <span class="hljs-comment">// Equals</span>
+&lt; <span class="hljs-comment">// Less Than</span>
+&gt; <span class="hljs-comment">// Greater Than</span>
+&lt;= <span class="hljs-comment">// Less than or Equal To</span>
+&gt;= <span class="hljs-comment">// Greater than or Equal To </span>
+&amp;&amp; <span class="hljs-comment">// AND</span>
+|| <span class="hljs-comment">// OR</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-54">
+    <section class="slide-content"><h1 id="you-can-nest-if-statements-">You can nest if statements!</h1>
+<p>Now your program is getting complicated</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-55">
     <section class="slide-content"><h1 id="looping">Looping</h1>
 <h2 id="again-again-again-">Again! Again! Again!</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-32">
+  <div class="slide hidden" id="slide-56">
     <section class="slide-content"><h3 id="when-why-would-i-want-to-use-a-loop-">When/why would I want to use a loop?</h3>
 <p>Loops are great for all kinds of reasons. The further you come along in your development career, the more and more you&#39;ll
 find yourself using loops. Here are a few examples of how loops can be handy:</p>
@@ -950,46 +1006,46 @@ find yourself using loops. Here are a few examples of how loops can be handy:</p
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-33">
+  <div class="slide hidden" id="slide-57">
     <section class="slide-content"><h3 id="for-loops-">For loops!</h3>
 <p>For loops are your most basic loop in JavaScript. Don&#39;t be intimidated by the syntax! It takes some getting use to, but
 once you&#39;ve got that down it really is a super handy tool!</p>
 <p><img src="./assets/fundamentals/loops/for-loop.png" alt="For Loop Example"></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-34">
+  <div class="slide hidden" id="slide-58">
     <section class="slide-content"><h3 id="while-loops-">While Loops!</h3>
 <p>This loop continues to run as long as the condition you pass to it remains true!</p>
 <p><img src="./assets/fundamentals/loops/while-loop.png" alt="While Loop Example!"></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-35">
+  <div class="slide hidden" id="slide-59">
     <section class="slide-content"><h1 id="a-brief-talk-about-collections">A brief talk about collections</h1>
 <h2 id="and-the-almighty-array-">And the almighty array!</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-36">
+  <div class="slide hidden" id="slide-60">
     <section class="slide-content"><h3 id="-array-foreach-example"><code>Array.forEach</code> Example</h3>
 <p><img src="./assets/fundamentals/loops/foreach-loop.png" alt="Array forEach loop"></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-37">
+  <div class="slide hidden" id="slide-61">
     <section class="slide-content"><h1 id="resources">Resources</h1>
 <ul>
 <li><a href="https://www.khanacademy.org/computing/computer-programming/programming#looping">Lesson on Looping from Khan Acadmey</a></li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-38">
+  <div class="slide hidden" id="slide-62">
     <section class="slide-content"><h3 id="-math-random-and-friends"><code>math.random</code> and friends</h3>
 </section>
   </div>
-  <div class="slide hidden" id="slide-39">
+  <div class="slide hidden" id="slide-63">
     <section class="slide-content"><h1 id="functions">Functions</h1>
 <h2 id="a-good-developer-is-a-lazy-one">A good developer is a lazy one</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-40">
+  <div class="slide hidden" id="slide-64">
     <section class="slide-content"><h3 id="there-are-three-different-parts-to-a-function">There are three different parts to a Function</h3>
 <ul>
 <li>The function name</li>
@@ -998,7 +1054,7 @@ once you&#39;ve got that down it really is a super handy tool!</p>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-41">
+  <div class="slide hidden" id="slide-65">
     <section class="slide-content"><h3 id="passing-information-to-your-function">Passing information to your function</h3>
 <p>When functions are defined, you specify what information it will accept. You do this by adding variable
 names into the parentheses of your function:</p>
@@ -1008,7 +1064,7 @@ names into the parentheses of your function:</p>
 <p>The function body will then use those values in place of the variables you set as arguments!</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-42">
+  <div class="slide hidden" id="slide-66">
     <section class="slide-content"><h3 id="telling-your-function-what-to-do">Telling your function what to do</h3>
 <p>Functions will do whatever you tell them to do! Any of the lines of code we&#39;ve showed so far can work inside of a function.
 Think of each line as instructions for your function to run after another. Your instructions need to be place between a functions
@@ -1019,20 +1075,20 @@ curly braces like this:</p>
 <p>The function body is where all the magic happens, and you can use any variables you specified as arguments!</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-43">
+  <div class="slide hidden" id="slide-67">
     <section class="slide-content"><h1 id="function-without-names-">Function without names?</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-44">
+  <div class="slide hidden" id="slide-68">
     <section class="slide-content"><h1 id="let-s-see-some-examples-">Let&#39;s see some examples!</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-45">
+  <div class="slide hidden" id="slide-69">
     <section class="slide-content"><h3 id="simple-adding-function">Simple adding function</h3>
 <p><img src="./assets/fundamentals/functions/add-func.png" alt="Adding function"></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-46">
+  <div class="slide hidden" id="slide-70">
     <section class="slide-content"><h3 id="wait-what-am-i-returning-here-">Wait, what am I returning here?</h3>
 <p>The keyword <code>return</code> is used to get information out of the function to be used elsewhere!
 You don&#39;t need to include the <code>return</code> keyword, but you&#39;ll find you want your function to return some data to you more often
@@ -1040,17 +1096,17 @@ than not! Be aware that once you return from a function, that function is comple
 <p><img src="./assets/fundamentals/functions/return-keyword.png" alt="Return keyword exits function"></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-47">
+  <div class="slide hidden" id="slide-71">
     <section class="slide-content"><h3 id="a-function-with-no-arguments">A Function with no arguments</h3>
 <p><img src="./assets/fundamentals/functions/no-args-func.png" alt="No Arguments Function"></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-48">
+  <div class="slide hidden" id="slide-72">
     <section class="slide-content"><h3 id="an-anonymous-function-">An Anonymous function!</h3>
 <p><img src="./assets/fundamentals/functions/anon-func.png" alt="Anonymous Function"></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-49">
+  <div class="slide hidden" id="slide-73">
     <section class="slide-content"><h3 id="exercise-build-your-own-function-">Exercise: Build your own function!</h3>
 <p>Build a simple named function with one or more lines of code in the body.</p>
 <h2 id="some-ideas-for-what-your-functions-could-do-">Some ideas for what your functions could do:</h2>
@@ -1061,27 +1117,27 @@ than not! Be aware that once you return from a function, that function is comple
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-50">
+  <div class="slide hidden" id="slide-74">
     <section class="slide-content"><h1 id="resources">Resources</h1>
 <ul>
 <li><a href="https://www.khanacademy.org/computing/computer-programming/programming/functions/p/functions">Lesson on Functions from Khan Academy</a></li>
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-51">
+  <div class="slide hidden" id="slide-75">
     <section class="slide-content"><h1 id="debugging">Debugging</h1>
 <h2 id="your-stuff-_will_-break">Your stuff <em>will</em> break</h2>
 </section>
   </div>
-  <div class="slide hidden" id="slide-52">
+  <div class="slide hidden" id="slide-76">
     <section class="slide-content"><h1 id="chrome-devtools">Chrome DevTools</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-53">
+  <div class="slide hidden" id="slide-77">
     <section class="slide-content"><h1 id="stepping-through-some-code">Stepping through some code</h1>
 </section>
   </div>
-  <div class="slide hidden" id="slide-54">
+  <div class="slide hidden" id="slide-78">
     <section class="slide-content"><h3 id="some-helpful-resources">Some helpful resources</h3>
 <ul>
 <li><a href="https://rubberduckdebugging.com/">Rubber Duck Debugging</a></li>
@@ -1091,16 +1147,16 @@ than not! Be aware that once you return from a function, that function is comple
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-55">
+  <div class="slide hidden" id="slide-79">
     <section class="slide-content"><p><a href="https://www.khanacademy.org/computing/computer-programming/html-js-jquery">https://www.khanacademy.org/computing/computer-programming/html-js-jquery</a></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-56">
+  <div class="slide hidden" id="slide-80">
     <section class="slide-content"><p><a href="https://www.khanacademy.org/computing/computer-programming/html-css-js/html-js-dom-access/p/finding-elements-by-id">https://www.khanacademy.org/computing/computer-programming/html-css-js/html-js-dom-access/p/finding-elements-by-id</a>
   <a href="https://www.khanacademy.org/computing/computer-programming/html-js-jquery#jquery-dom-access">https://www.khanacademy.org/computing/computer-programming/html-js-jquery#jquery-dom-access</a></p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-57">
+  <div class="slide hidden" id="slide-81">
     <section class="slide-content"><p><a href="https://www.khanacademy.org/computing/computer-programming/html-css-js/js-and-the-dom/p/putting-js-in-a-webpage">https://www.khanacademy.org/computing/computer-programming/html-css-js/js-and-the-dom/p/putting-js-in-a-webpage</a></p>
 <h1 id="html-and-js">HTML and JS</h1>
 <p>A basic webpage contains HTML tags, and that&#39;s everything that we&#39;ve seen so far. To include our CSS to style page, we included a separate style file using a link tag. Similarly, we can use a script tag to add JavaScript into our webpage to make things interactive.</p>
@@ -1117,7 +1173,7 @@ than not! Be aware that once you return from a function, that function is comple
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-58">
+  <div class="slide hidden" id="slide-82">
     <section class="slide-content"><p><a href="https://thimbleprojects.org/mrawesomesauce/295145/">https://thimbleprojects.org/mrawesomesauce/295145/</a></p>
 <h1 id="click-events-with-jquery">Click Events with jQuery</h1>
 <p>Now that we have a basic understanding of what jQuery is, let&#39;s try to add some interactivity to our webpage using jQuery.  </p>
@@ -1141,16 +1197,16 @@ than not! Be aware that once you return from a function, that function is comple
 </ul>
 </section>
   </div>
-  <div class="slide hidden" id="slide-59">
+  <div class="slide hidden" id="slide-83">
     <section class="slide-content"><p><a href="http://jsfiddle.net/nikhilmangal/96wL9xtu/">http://jsfiddle.net/nikhilmangal/96wL9xtu/</a></p>
 <p>? More detailed example ?</p>
 </section>
   </div>
-  <div class="slide hidden" id="slide-60">
+  <div class="slide hidden" id="slide-84">
     <section class="slide-content"><h1 id="final-project">Final project</h1>
 </section>
   </div>
-  <div class="slide hidden author-slide" id="slide-61">
+  <div class="slide hidden author-slide" id="slide-85">
     <section class="slide-content"><div class="author">
   <h1 class="name">Varun Vachhar, Renee Vrantsidis, Houssein Djirdeh, Raven Avalon</h1>
 </div>

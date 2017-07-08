@@ -1,33 +1,82 @@
-# Control Flow
+# If/Else
+Teaching our program to make decisions
 
-## If/Else
-- We want our program to behave differently in different circumstances
-- In programming this might look like
+--
 
-## Anatomy of an if statement
-- Condition
-- Execution/Body
+# If Statements let our program do some things and not others
 
-### True or False
-- What's a Boolean?
-- How does it work
+--
 
-### Comparison operators
-- ===
-- < / >
-- <= / >=
-- &&
-- ||
+![Variable Example!](ASSETS_PATH/fundamentals/ifelse/ifelse.png)
 
-### Execution block
-- Scope is confined
+--
 
-## Else and Else If
+# Condition
+Code that your program will check first to see how it should proceed
 
-## Nesting If statements
+![Variable Example!](ASSETS_PATH/fundamentals/ifelse/ifelse.png)
 
-## References
-https://www.khanacademy.org/computing/computer-programming/programming#logic-if-statements
+--
 
+# Your condition is a Boolean
+JavaScript will turn it into either `true` or `false`
+
+--
+
+# Body
+Code that your program will only run when the condition is `true`
+
+![Variable Example!](ASSETS_PATH/fundamentals/ifelse/ifelse.png)
+
+--
+
+# Unreachable code
+
+```js
+if (true) { // This is the Boolean type true, so condition will always be true
+  console.log('I will always be printed!');
+} else {
+  console.log('What about me?'); // This will never run
+}
+```
+
+--
+
+
+```js
+if (true) { // This is the Boolean type true, so condition will always be true
+  const reachable = 'I am reachable!';
+} else {
+  const unreachable = 'I am not reachable!';
+}
+
+console.log(reachable);
+=> 'I am reachable!';
+
+console.log(unreachable);
+=> ReferenceError: unreachable is not defined
+```
+
+--
+
+# Comparison operators
+Comparisons operators let us build conditions
+
+--
+
+```js
+=== // Equals
+< // Less Than
+> // Greater Than
+<= // Less than or Equal To
+>= // Greater than or Equal To 
+&& // AND
+|| // OR
+```
+
+--
+
+# You can nest if statements!
+Now your program is getting complicated
 
 
