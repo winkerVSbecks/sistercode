@@ -42,23 +42,6 @@ if (true) { // This is the Boolean type true, so condition will always be true
 
 --
 
-
-```js
-if (true) { // This is the Boolean type true, so condition will always be true
-  const reachable = 'I am reachable!';
-} else {
-  const unreachable = 'I am not reachable!';
-}
-
-console.log(reachable);
-=> 'I am reachable!';
-
-console.log(unreachable);
-=> ReferenceError: unreachable is not defined
-```
-
---
-
 # Comparison operators
 Comparisons operators let us build conditions
 
