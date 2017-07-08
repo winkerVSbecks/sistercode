@@ -4,14 +4,14 @@
 - Google things you aren't sure about
 - Break things down into small chunks and get one piece working at a time
 
-## Objectives for your code
-- It's pretty predictable
-- Future you can read and understand it
-- It basically works 
-
 --
 
-## What does it mean to be a developer?
+### Objectives for your code
+
+- It's pretty predictable (Don't get too fancy unless you have to)
+- Future you can read and understand it
+- _Other_ developers can read and understand it
+- It basically works
 
 --
 
@@ -20,6 +20,7 @@
 --
 
 # Google-Fu
+## Cooler than you'd think, less than you'd hope.
 
 --
 
@@ -28,5 +29,11 @@
 
 --
 
-# "Rubber Duck" Debugging
+# Rubber Duck Debugging
 ## Bear with me on this one.
+
+--
+
+### Resources
+
+- [Rubber Duck Debugging](https://rubberduckdebugging.com/cyberduck/)
