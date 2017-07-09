@@ -11,6 +11,10 @@
 
 --
 
+# Exercise: Intro to Variables
+
+--
+
 # Making a variable
 
 ![Variable Example!](ASSETS_PATH/fundamentals/variables/variableanatomy.png)
@@ -66,5 +70,6 @@ console.log(myName)
 
 ![Variable Example!](ASSETS_PATH/fundamentals/variables/variableanatomy.png)
 
+--
 
-
+# Exercise: Variables Exercise

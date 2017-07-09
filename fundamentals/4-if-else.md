@@ -42,6 +42,15 @@ Some basic data types can return `false` by default! It's best to be aware of th
 
 --
 
+# Else
+Code that will execute when your condition is false
+
+--
+
+# You don't need else for your code to work
+
+--
+
 # Unreachable code
 
 ```js
@@ -51,6 +60,10 @@ if (true) { // This is the Boolean type true, so condition will always be true
   console.log('What about me?'); // This will never run
 }
 ```
+
+--
+
+# Exercise: If/Else Introduction
 
 --
 
@@ -72,5 +85,29 @@ if (true) { // This is the Boolean type true, so condition will always be true
 
 --
 
+# Exercise: Conditions Introduction
+
+--
+
+# Else If
+Else and if can be combined to test for multiple conditions
+
+--
+
+```js
+if (myNumber < 5) {
+  // This part will run if the number is from 1 - 4
+} else if (myNumber < 10) {
+  // This part will run if the number is from 5 - 9
+} else {
+  // This part will run if the number is anything else
+}
+```
+
+--
+
 # You can nest if statements!
-##Now your program is getting complicated
+
+--
+
+# Exercise: If/Else and Conditions Exercise
