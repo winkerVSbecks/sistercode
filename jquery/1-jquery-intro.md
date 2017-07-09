@@ -2,12 +2,14 @@
 
 --
 
-### Browser APIs and DOM
+### Terminology
 
-+ DOM stands for Document Object Model.
-+ It is the JavaScript representation on the HTML you write.
-+ JavaScript can manipulate the DOM using the browser APIs
-  + API are rules (_code_) that allow software programs to talk to each other.
++ **API:** rules (_code_) that allow software programs to talk to each other.
+
++ **DOM:** Document Object Model.
+  + It is the JavaScript representation on the HTML you write.
+
++ JavaScript can manipulate the DOM using the **Browser APIs**
 
 <p class="reference-link">
 » <a href="https://css-tricks.com/dom/">What is the DOM?</a>
@@ -25,15 +27,15 @@ Browsers have similar APIs but, not 100% exactly the same. JavaScript can behave
 
 ### jQuery
 
-+ The most popular library on the web today.
++ Provides consistent behaviour across all browsers.
++ Easier to use than the browser APIs
 + Used for tasks such as:
   + manipulating the webpage
   + responding to user events
   + fetching data from the server
   + animations
   + and much more!
-+ Easier to use than the DOM APIs
-+ Provides consistent behaviour across all browsers.
++ The most popular library on the web today.
 
 <p class="reference-link">
 » <a href="https://www.khanacademy.org/computing/computer-programming/html-js-jquery/jquery-intro/v/what-is-jquery">What is jQuery?</a>
@@ -49,7 +51,7 @@ A library is a JavaScript file that contains a bunch of functions. It makes deve
 
 <div style="display: flex;">
   <div style="flex: 1; padding: 2rem; background-color: antiquewhite; color: black; font-weight: bold; margin-right: 1rem;">
-    JavaScript DOM
+    JavaScript
   </div>
 
   <div style="flex: 1; padding: 2rem; background-color: burlywood; color: black; font-weight: bold;">

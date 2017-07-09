@@ -4,7 +4,7 @@
 --
 
 # Chrome DevTools
-## `cmd + option + i` or `ctrl + shift + i`
+## `cmd + option + j` or `ctrl + shift + j`
 
 --
 

@@ -18,10 +18,9 @@ Generates a number between `0` and `1`
 
 ```js
 parseInt('17');
-parseInt('015');
+parseInt('12345');
 parseInt(15.99);
 parseInt('15,123');
-parseInt('1111');
 ```
 
 <p class="reference-link">
@@ -64,7 +63,7 @@ Dates in JavaScript are stored as a value that is the number of milliseconds sin
 
 ```js
 new Date(); // right now
-new Date(dateString); // eg: '25 May 1986'
+new Date(dateString); // eg: '25 March 2006'
 new Date(year, month, date); // 2017, 7, 9
 ```
 

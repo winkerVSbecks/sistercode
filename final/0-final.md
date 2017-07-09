@@ -1,6 +1,6 @@
 # Final project 💎 📄 ✂️
 
-+ We are going to build a Rock Paper Scissors game!
++ We are going to build a Rock Paper Scissors game! [see the final result](final)
 
 + Go to [Rock Paper Scissors Thimble Project](https://thimbleprojects.org/winkervsbecks/295358/) and hit remix.
 
