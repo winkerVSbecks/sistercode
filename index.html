@@ -715,6 +715,7 @@ pre code {
   background: white;
   color: #4d4d4c;
   padding: 0.5em;
+  font-family: monospace;
 }
 
 .hljs-emphasis {
@@ -789,6 +790,7 @@ pre code {
   <div class="slide hidden" id="slide-10">
     <section class="slide-content"><h1 id="thimble">Thimble</h1>
 <h2 id="let-s-get-you-coding-">Let&#39;s get you coding!</h2>
+<p>sign up on <a href="https://thimble.mozilla.org/en-US/">thimble.mozilla.org</a></p>
 </section>
   </div>
   <div class="slide hidden" id="slide-11">
@@ -941,7 +943,7 @@ your HTML right in the browser when designing an interface.</p>
     <section class="slide-content"><h3 id="3-ways-to-open-console-in-google-chrome">3 ways to open console in Google Chrome</h3>
 <ul>
 <li>View &gt; Developer &gt; JavaScript Console</li>
-<li><code>⌥ ⌘ J</code></li>
+<li><code>⌥ + ⌘ + j</code> or <code>alt + ctrl + j</code></li>
 <li>Right Click &gt; Inspect &gt; select the console tab</li>
 </ul>
 <p class="reference-link">
@@ -1279,10 +1281,9 @@ once you&#39;ve got that down it really is a super handy tool!</p>
   <div class="slide hidden" id="slide-81">
     <section class="slide-content"><h3 id="parse-numbers">Parse Numbers</h3>
 <pre><code class="lang-js"><span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'17'</span>);
-<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'015'</span>);
+<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'12345'</span>);
 <span class="hljs-built_in">parseInt</span>(<span class="hljs-number">15.99</span>);
-<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'15,123'</span>);
-<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'1111'</span>);</code></pre>
+<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'15,123'</span>);</code></pre>
 <p class="reference-link">
 » <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt">parseInt</a>
 </p></section>
@@ -1316,7 +1317,7 @@ data.forEach(<span class="hljs-function"><span class="hljs-keyword">function</sp
     <section class="slide-content"><h3 id="date">Date</h3>
 <p>Dates in JavaScript are stored as a value that is the number of milliseconds since 1 January, 1970 UTC.</p>
 <pre><code class="lang-js"><span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(); <span class="hljs-comment">// right now</span>
-<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(dateString); <span class="hljs-comment">// eg: '25 May 1986'</span>
+<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(dateString); <span class="hljs-comment">// eg: '25 March 2006'</span>
 <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(year, month, date); <span class="hljs-comment">// 2017, 7, 9</span></code></pre>
 <p class="reference-link">
 » <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>
@@ -1432,7 +1433,7 @@ than not. Be aware that once you return from a function, that function is comple
   </div>
   <div class="slide hidden" id="slide-99">
     <section class="slide-content"><h1 id="chrome-devtools">Chrome DevTools</h1>
-<h2 id="-cmd-option-i-or-ctrl-shift-i-"><code>cmd + option + i</code> or <code>ctrl + shift + i</code></h2>
+<h2 id="-cmd-option-j-or-ctrl-shift-j-"><code>cmd + option + j</code> or <code>ctrl + shift + j</code></h2>
 </section>
   </div>
   <div class="slide hidden" id="slide-100">
@@ -1470,13 +1471,16 @@ JavaScript are indeed taking effect. If something isn&#39;t working right, looki
 </section>
   </div>
   <div class="slide hidden" id="slide-105">
-    <section class="slide-content"><h3 id="browser-apis-and-dom">Browser APIs and DOM</h3>
+    <section class="slide-content"><h3 id="terminology">Terminology</h3>
 <ul>
-<li>DOM stands for Document Object Model.</li>
+<li><p><strong>API:</strong> rules (<em>code</em>) that allow software programs to talk to each other.</p>
+</li>
+<li><p><strong>DOM:</strong> Document Object Model.</p>
+<ul>
 <li>It is the JavaScript representation on the HTML you write.</li>
-<li>JavaScript can manipulate the DOM using the browser APIs<ul>
-<li>API are rules (<em>code</em>) that allow software programs to talk to each other.</li>
 </ul>
+</li>
+<li><p>JavaScript can manipulate the DOM using the <strong>Browser APIs</strong></p>
 </li>
 </ul>
 <p class="reference-link">
@@ -1491,7 +1495,8 @@ JavaScript are indeed taking effect. If something isn&#39;t working right, looki
   <div class="slide hidden" id="slide-107">
     <section class="slide-content"><h3 id="jquery">jQuery</h3>
 <ul>
-<li>The most popular library on the web today.</li>
+<li>Provides consistent behaviour across all browsers.</li>
+<li>Easier to use than the browser APIs</li>
 <li>Used for tasks such as:<ul>
 <li>manipulating the webpage</li>
 <li>responding to user events</li>
@@ -1500,8 +1505,7 @@ JavaScript are indeed taking effect. If something isn&#39;t working right, looki
 <li>and much more!</li>
 </ul>
 </li>
-<li>Easier to use than the DOM APIs</li>
-<li>Provides consistent behaviour across all browsers.</li>
+<li>The most popular library on the web today.</li>
 </ul>
 <p class="reference-link">
 » <a href="https://www.khanacademy.org/computing/computer-programming/html-js-jquery/jquery-intro/v/what-is-jquery">What is jQuery?</a>
@@ -1515,7 +1519,7 @@ JavaScript are indeed taking effect. If something isn&#39;t working right, looki
 
 <div style="display: flex;">
   <div style="flex: 1; padding: 2rem; background-color: antiquewhite; color: black; font-weight: bold; margin-right: 1rem;">
-    JavaScript DOM
+    JavaScript
   </div>
 
   <div style="flex: 1; padding: 2rem; background-color: burlywood; color: black; font-weight: bold;">

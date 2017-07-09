@@ -44,7 +44,7 @@ A programming language that allows you to implement complex things on web pages.
 ### 3 ways to open console in Google Chrome
 
 - View > Developer > JavaScript Console
-- `⌥ ⌘ J`
+- `⌥ + ⌘ + j` or `alt + ctrl + j`
 - Right Click > Inspect > select the console tab
 
 <p class="reference-link">
