@@ -1,4 +1,4 @@
-# jQuery Events
+# jQuery Events ️
 
 --
 
@@ -71,7 +71,7 @@ Now every time we click the button, the value gets incremented by 1!
 
 --
 
-### Exercises
+### Exercise
 
 - Change the increment to 2 instead of 1 everytime we click the button
 - Add another button that allows us to decrement the value of the counter by 1
