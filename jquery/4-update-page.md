@@ -10,6 +10,8 @@ We'll explore using a click event to modify items on a webpage again, but this t
 
 --
 
+### Change CSS with jQuery
+
 This outputs some text with a button:
 
 ![Text and Button](ASSETS_PATH/jquery/text-and-button-output.png)
@@ -25,6 +27,8 @@ Now let's write some jQuery in to modify the styles of our title element.
 Notice that we use the .title selector to identify which element to modify.
 
 --
+
+### Change CSS with jQuery
 
 If we now click the button in our webpage, we'll see the background of the title change!
 

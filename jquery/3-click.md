@@ -24,7 +24,8 @@ The entire jQuery library is just a single JavaScript file and can be referenced
 
 --
 
-### We can also reference it directly using hosted servers.
+### We can also reference it directly using hosted servers
+
 Both Google and Microsoft are used the most
 
 ```
