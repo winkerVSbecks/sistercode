@@ -2,28 +2,6 @@
 
 --
 
-### Components of a webpage
-
-Typically, an HTML page will have two main parts to it:
-
-- The `head`. This is where you can specify meta information like the title of your page
-- The `Body`. This is where the actual structure of your webpage goes
-
-There is also what's called the "doctype" which tells the browser which version of HTML you're using.
-The `head` and the `body` are surrounded by the opening and closing tags of the `html` element. Everything
-except your doctype goes inside of the `html` element.
-
---
-
-### Example
-
-This is an example of a simple HTML 5 document layout. You won't need to worry about this today, but it's nice
-to know about.
-
-![HTML5 basic skeleton](ASSETS_PATH/HTML/html5.png)
-
---
-
 ### HTML Tags
 
 HTML uses what are called "tags" to build it's structure. A tag is comprised of what is called an "opening" tag and a
@@ -59,6 +37,28 @@ but they can also be found in the body. Here are some examples:
 This is an example of how the structure of an article might look.
 
 ![Raw Markup](ASSETS_PATH/HTML/raw-html.png)
+
+--
+
+### Components of a webpage
+
+Typically, an HTML page will have two main parts to it:
+
+- The `head`. This is where you can specify meta information like the title of your page
+- The `Body`. This is where the actual structure of your webpage goes
+
+There is also what's called the "doctype" which tells the browser which version of HTML you're using.
+The `head` and the `body` are surrounded by the opening and closing tags of the `html` element. Everything
+except your doctype goes inside of the `html` element.
+
+--
+
+### Example
+
+This is an example of a simple HTML 5 document layout. You won't need to worry about this today, but it's nice
+to know about.
+
+![HTML5 basic skeleton](ASSETS_PATH/HTML/html5.png)
 
 --
 
