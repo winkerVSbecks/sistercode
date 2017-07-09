@@ -22,7 +22,7 @@ navigate to the `console` tab. It should look like this:
 
 When you open the console on any webpage, you have access to the code you've attached to that page. This means
 you can check the value of variables you've defined, run functions you've created, etc, etc. (there are some
-exceptions to what DevTools can let you inspect this way, but we'll talk about that more later)
+exceptions to what DevTools can let you inspect this way, but that's not in the _scope_ of this workshop!)
 
 --
 

@@ -131,7 +131,7 @@ Allows us to control the visual styles of our HTML content. Styles such as colou
 
 ### CSS
 
-The selectors we have been using coming from CSS. In CSS we use those selectors to target elements and edit their styles.
+The selectors we have been using come from CSS. In CSS we use those selectors to target elements and edit their styles.
 
 ```css
 .link {
