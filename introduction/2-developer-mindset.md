@@ -34,6 +34,11 @@
 
 --
 
+# You're Not Alone
+## And you don't need to do everything yourself.
+
+--
+
 ### Resources
 
 - [Rubber Duck Debugging](https://rubberduckdebugging.com/cyberduck/)

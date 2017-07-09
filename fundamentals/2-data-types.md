@@ -24,8 +24,9 @@
 
 Used to store a list of data. An array is composed of different types, and can mix and match them. We'll talk more about them later.
 
-- `[1, 2, 3, 4, 5]`
+
 ```js
+[1, 2, 3, 4, 5]
 [
   'I am a string in an Array',
   2,
@@ -60,6 +61,10 @@ console.log('The console is silly sometimes');
 
 --
 
+# Exercise: Intro to Data Types
+
+--
+
 # Operations
 ## An operation is a calculation. Similar to math, different data types can do different operations
 
@@ -72,3 +77,7 @@ console.log('The console is silly sometimes');
 
 # Computers are dumb
 ## JavaScript will try its best to figure out what you mean, but it's best if it doesn't have to guess
+
+--
+
+# Exercise: Data Types Exercise
