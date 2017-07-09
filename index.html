@@ -1,0 +1,1963 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>SisterCode Introduction to JavaScript</title>
+  <style type="text/css">
+    /* Color Palette Based on Monokai
+
+white       : #fafafa
+light grey  : #efefef
+grey        : #75715e
+dark grey   : #272822
+black       : #191919
+
+light blue  : #66d9ef
+blue        : #1db4d0
+lavender    : #bf79db
+magenta     : #f92672
+light green : #a6e22e
+*/
+
+/* Local Fonts */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url('fonts/opensans/300.woff2') format('woff2'),
+       url('fonts/opensans/300.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/opensans/400.woff2') format('woff2'),
+       url('fonts/opensans/400.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url('fonts/opensans/600.woff2') format('woff2'),
+       url('fonts/opensans/600.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/opensans/700.woff2') format('woff2'),
+       url('fonts/opensans/700.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: url('fonts/opensans/800.woff2') format('woff2'),
+       url('fonts/opensans/800.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 300;
+  src: url('fonts/opensans/300i.woff2') format('woff2'),
+       url('fonts/opensans/300i.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: url('fonts/opensans/400i.woff2') format('woff2'),
+       url('fonts/opensans/400i.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 600;
+  src: url('fonts/opensans/600i.woff2') format('woff2'),
+       url('fonts/opensans/600i.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: url('fonts/opensans/700i.woff2') format('woff2'),
+       url('fonts/opensans/700i.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 800;
+  src: url('fonts/opensans/800i.woff2') format('woff2'),
+       url('fonts/opensans/800i.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/merriweather/400.woff2') format('woff2'),
+       url('fonts/merriweather/400.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/merriweather/700.woff2') format('woff2'),
+       url('fonts/merriweather/700.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 900;
+  src: url('fonts/merriweather/900.woff2') format('woff2'),
+       url('fonts/merriweather/900.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: italic;
+  font-weight: 400;
+  src: url('fonts/merriweather/400i.woff2') format('woff2'),
+       url('fonts/merriweather/400i.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: italic;
+  font-weight: 700;
+  src: url('fonts/merriweather/700i.woff2') format('woff2'),
+       url('fonts/merriweather/700i.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: italic;
+  font-weight: 900;
+  src: url('fonts/merriweather/900i.woff2') format('woff2'),
+       url('fonts/merriweather/900i.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Fira Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('fonts/fira/400.woff2') format('woff2'),
+       url('fonts/fira/400.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Fira Mono';
+  font-style: normal;
+  font-weight: 500;
+  src: url('fonts/fira/500.woff2') format('woff2'),
+       url('fonts/fira/500.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Fira Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('fonts/fira/700.woff2') format('woff2'),
+       url('fonts/fira/700.woff') format('woff');
+}
+
+/* Theme Styles */
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 100%;
+  color: #fafafa;
+  background-color: #191919;
+}
+
+/* Custom Slide Styles */
+#slide-1 {
+  background: #222 url(wireball.png) center center no-repeat;
+  background-size: cover;
+}
+
+#slide-1 h1 {
+  text-shadow: 1px 2px 4px #191919;
+}
+
+#slide-1 p {
+  text-shadow: 1px 1px 1px #191919;
+}
+
+.center {
+  text-align: center;
+}
+
+img.badge {
+  height: 128px;
+  width: 128px !important;
+  border-radius: 50% !important;
+}
+
+/* Presentation Styles */
+.slide {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 100px;
+}
+
+.slide-content {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  font-size: 200%;
+  font-weight: 200;
+  line-height: 1.375;
+  overflow: hidden;
+}
+
+.slide-content img {
+  width: 100%;
+  border-radius: 3px;
+}
+
+.controls {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+
+.arrow {
+  float: left;
+  height: 0;
+  width: 0;
+  margin-right: 15px;
+  border: 15px solid #272822;
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+.prev {
+  border-top-color: transparent;
+  border-right-width: 25px;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-left-width: 0;
+}
+
+.next {
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-right-width: 0;
+  border-bottom-color: transparent;
+  border-left-width: 25px;
+}
+
+.prev:hover {
+  border-right-color: #efefef;
+  cursor: pointer;
+}
+
+.next:hover {
+  border-left-color: #efefef;
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Merriweather', serif;
+}
+
+h1 {
+  margin: 170px 0 0;
+  font-size: 300%;
+  text-align: center;
+  line-height: 1.2;
+}
+
+h2 {
+  margin: 5px 0;
+  font-size: 100%;
+  font-weight: 200;
+  text-align: center;
+  line-height: 1.2;
+}
+
+h3 {
+  margin: 0;
+  padding-bottom: 15px;
+  font-size: 140%;
+  line-height: 1.2;
+  border-bottom: 2px ridge #fafafa;
+}
+
+ul {
+  padding: 20px 0 0 60px;
+  font-weight: 200;
+  line-height: 1.375;
+}
+
+blockquote {
+  padding-left: 20px;
+  margin-left: 0;
+  background: #272822;
+  border-left: 5px solid #efefef;
+  border-radius: 0 3px 3px 0;
+}
+
+blockquote p {
+  padding: .5em;
+  color: #efefef;
+}
+
+.left {
+  float: left;
+  width: 48%;
+}
+
+.right {
+  float: right;
+  width: 48%;
+}
+
+.author h1 {
+  margin-bottom: 30px;
+  font-size: 170%;
+  font-weight: 200;
+  text-align: center;
+}
+
+.author h3 {
+  font-size: 95%;
+  font-weight: 100;
+  text-align: center;
+  border: none;
+}
+
+.author h3.twitter::before {
+  content: 'Twitter: ';
+}
+
+.author h3.github::before {
+  content: 'Github: ';
+}
+
+.author h3.email::before {
+  content: 'Email: ';
+}
+
+.author h3.url::before {
+  content: 'Web: ';
+}
+
+a {
+  text-decoration: none;
+  color: #66d9ef;
+}
+
+a:hover {
+  color: #66d9ef;
+  border-bottom: 1px solid #66d9ef;
+}
+
+hr {
+  border: 1px solid #efefef;
+}
+
+pre {
+  font-size: 75%;
+  line-height: 1.3;
+}
+
+table td,
+table th {
+  padding-right: 3em;
+  text-align: left;
+}
+
+.progress {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+}
+
+.progress-bar {
+  height: 3px;
+  width: 0;
+  background-color: #a6e22e;
+  -webkit-transition: width .15s ease-out;
+     -moz-transition: width .15s ease-out;
+       -o-transition: width .15s ease-out;
+          transition: width .15s ease-out;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Code Highlighting */
+code {
+  padding: .1em .35em;
+  font-family: 'Fira Mono';
+  color: #fafafa;
+  background-color: #272822;
+  border-radius: 3px;
+}
+
+pre code {
+  display: block;
+  padding: .5em;
+  font-family: 'Fira Mono';
+  font-weight: 400;
+  overflow-y: hidden;
+  background: #272822;
+}
+
+pre .tag,
+pre .tag .title,
+pre .keyword,
+pre .literal,
+pre .change,
+pre .winutils,
+pre .flow,
+pre .lisp .title,
+pre .clojure .built_in,
+pre .nginx .title,
+pre .tex .special {
+  color: #f92672;
+}
+
+pre code {
+  color: #75715e;
+}
+
+pre code .constant {
+  color: #66d9ef;
+}
+
+pre .class .title {
+  color: #fafafa;
+}
+
+pre .attribute,
+pre .symbol,
+pre .symbol .string,
+pre .value,
+pre .regexp {
+  color: #bf79db;
+}
+
+pre .tag .value,
+pre .string,
+pre .subst,
+pre .title,
+pre .haskell .type,
+pre .preprocessor,
+pre .ruby .class .parent,
+pre .built_in,
+pre .sql .aggregate,
+pre .django .template_tag,
+pre .django .variable,
+pre .smalltalk .class,
+pre .javadoc,
+pre .django .filter .argument,
+pre .smalltalk .localvars,
+pre .smalltalk .array,
+pre .attr_selector,
+pre .pseudo,
+pre .addition,
+pre .stream,
+pre .envvar,
+pre .apache .tag,
+pre .apache .cbracket,
+pre .tex .command,
+pre .prompt {
+  color: #a6e22e;
+}
+
+pre .comment,
+pre .java .annotation,
+pre .python .decorator,
+pre .template_comment,
+pre .pi,
+pre .doctype,
+pre .deletion,
+pre .shebang,
+pre .apache .sqbracket,
+pre .tex .formula {
+  color: #75715e;
+}
+
+pre .keyword,
+pre .literal,
+pre .css .id,
+pre .phpdoc,
+pre .title,
+pre .haskell .type,
+pre .vbscript .built_in,
+pre .sql .aggregate,
+pre .rsl .built_in,
+pre .smalltalk .class,
+pre .diff .header,
+pre .chunk,
+pre .winutils,
+pre .bash .variable,
+pre .apache .tag,
+pre .tex .special,
+pre .request,
+pre .status {
+  /* font-weight: 600; */
+}
+
+pre .coffeescript .javascript,
+pre .javascript .xml,
+pre .tex .formula,
+pre .xml .javascript,
+pre .xml .vbscript,
+pre .xml .css,
+pre .xml .cdata {
+  opacity: .5;
+}
+
+/* Responsiveness */
+
+@media (max-width: 850px) {
+
+  body {
+    font-size: 70%;
+  }
+
+  .slide-content {
+    width: auto;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 3px;
+  }
+
+  h1 {
+    margin-top: 120px;
+  }
+
+  .prev,
+  .prev:hover {
+    border-right-color: rgba(135, 135, 135, .5);
+  }
+
+  .next,
+  .next:hover {
+    border-left-color: rgba(135, 135, 135, .5);
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    overflow: hidden;
+    font-size: 50%;
+  }
+
+  .slide-content {
+    height: 340px;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  h1 {
+    margin-top: 50px;
+  }
+
+  ul {
+    padding-left: 25px;
+  }
+}
+
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+  }
+
+  @page {
+    size: letter;
+  }
+
+  .hidden {
+    display: inline;
+  }
+
+  html {
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+  }
+
+  body {
+    float: none !important;
+    padding: 0;
+    margin: 0 auto !important;
+    overflow: visible;
+    font-size: 52%;
+    background: none !important;
+    border: 0;
+  }
+
+  .progress,
+  .controls {
+    display: none;
+  }
+
+  .slide {
+    position: static;
+  }
+
+  .slide-content {
+    margin-top: 0;
+    margin-bottom: 40px;
+    height: 3.5in;
+    overflow: visible;
+    border: 1px solid #222;
+  }
+
+  .slide:nth-child(even) {
+    /* 2 slides per page */
+    page-break-before: always;
+  }
+}
+
+.slide-content img {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+  border: 5px solid #f1f1f1;
+  border-radius: 0;
+}
+
+.slide-content img[src*="for-array.png"] {
+  width: 90%;
+}
+
+.reference-link {
+  margin-top: 4rem;
+  font-size: 75%;
+}
+
+/**
+ * Syntax highlighting
+ */
+.hljs-comment,
+.hljs-quote {
+  color: #8e908c;
+}
+
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+  color: #c82829;
+}
+
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+  color: #f5871f;
+}
+
+.hljs-attribute {
+  color: #eab700;
+}
+
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: #718c00;
+}
+
+.hljs-title,
+.hljs-section {
+  color: #4271ae;
+}
+
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #8959a8;
+}
+
+pre code {
+  display: block;
+  overflow-x: auto;
+  background: white;
+  color: #4d4d4c;
+  padding: 0.5em;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+.hljs-strong {
+  font-weight: bold;
+}
+
+  </style>
+</head>
+<body>
+    <div class="progress">
+    <div class="progress-bar"></div>
+  </div>
+
+  <div class="slide" id="slide-1">
+    <section class="slide-content"><h1 id="introduction">Introduction</h1>
+<h2 id="ready-to-get-started-">Ready to get started?</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-2">
+    <section class="slide-content"><h1 id="getting-to-know-each-other">Getting to know each other</h1>
+<h2 id="did-someone-say-icebreaker-no-oh-">Did someone say &quot;icebreaker&quot;? No? Oh...</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-3">
+    <section class="slide-content"><h1 id="developer-mindset">Developer Mindset</h1>
+<ul>
+<li>Break stuff &#39;til it works</li>
+<li>Google things you aren&#39;t sure about</li>
+<li>Break things down into small chunks and get one piece working at a time</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-4">
+    <section class="slide-content"><h3 id="objectives-for-your-code">Objectives for your code</h3>
+<ul>
+<li>It&#39;s pretty predictable (Don&#39;t get too fancy unless you have to)</li>
+<li>Future you can read and understand it</li>
+<li><em>Other</em> developers can read and understand it</li>
+<li>It basically works</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-5">
+    <section class="slide-content"><h1 id="being-an-expert-">Being an &quot;Expert&quot;</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-6">
+    <section class="slide-content"><h1 id="google-fu">Google-Fu</h1>
+<h2 id="cooler-than-you-d-think-less-than-you-d-hope-">Cooler than you&#39;d think, less than you&#39;d hope.</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-7">
+    <section class="slide-content"><h1 id="pair-programming">Pair Programming</h1>
+<h2 id="no-one-s-as-smart-as-all-of-us-">No-one&#39;s as smart as all of us.</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-8">
+    <section class="slide-content"><h1 id="rubber-duck-debugging">Rubber Duck Debugging</h1>
+<h2 id="bear-with-me-on-this-one-">Bear with me on this one.</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-9">
+    <section class="slide-content"><h3 id="resources">Resources</h3>
+<ul>
+<li><a href="https://rubberduckdebugging.com/cyberduck/">Rubber Duck Debugging</a></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-10">
+    <section class="slide-content"><h1 id="thimble">Thimble</h1>
+<h2 id="let-s-get-you-coding-">Let&#39;s get you coding!</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-11">
+    <section class="slide-content"><h1 id="html">HTML</h1>
+<h2 id="hypertext-markup-language">HyperText Markup Language</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-12">
+    <section class="slide-content"><h1 id="html-the-structure">HTML: The Structure</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-13">
+    <section class="slide-content"><h3 id="html-tags">HTML Tags</h3>
+<p>HTML uses what are called &quot;tags&quot; to build it&#39;s structure. A tag is comprised of what is called an &quot;opening&quot; tag and a
+&quot;closing&quot; tag, possibly with attributes defined on the opening tag. A typical tag will look like this:</p>
+<p><img src="./assets/HTML/tags.png" alt="Html tags"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-14">
+    <section class="slide-content"><h3 id="attributes">Attributes</h3>
+<p>You can add specific information to HTML elements using what is known as <strong>Attributes</strong>.
+These are useful for telling an element to behave in specific ways. For example, telling
+and image tag what image to load, or telling an anchor tag (a link) to open a page in a
+separate tab.</p>
+<p><img src="./assets/HTML/attributes.png" alt="HTML attributes"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-15">
+    <section class="slide-content"><h3 id="empty-elements">Empty Elements</h3>
+<p>&quot;Empty elements&quot; are elements that do not contain content inside them. Unlike regular elements,
+they do not take an ending tag. Many of these elements can be found in the <strong>Head</strong> of the page,
+but they can also be found in the body. Here are some examples:</p>
+<p><img src="./assets/HTML/empty-tags.png" alt="Empty elements"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-16">
+    <section class="slide-content"><h3 id="example">Example</h3>
+<p>This is an example of how the structure of an article might look.</p>
+<p><img src="./assets/HTML/raw-html.png" alt="Raw Markup"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-17">
+    <section class="slide-content"><h3 id="components-of-a-webpage">Components of a webpage</h3>
+<p>Typically, an HTML page will have two main parts to it:</p>
+<ul>
+<li>The <code>head</code>. This is where you can specify meta information like the title of your page</li>
+<li>The <code>Body</code>. This is where the actual structure of your webpage goes</li>
+</ul>
+<p>There is also what&#39;s called the &quot;doctype&quot; which tells the browser which version of HTML you&#39;re using.
+The <code>head</code> and the <code>body</code> are surrounded by the opening and closing tags of the <code>html</code> element. Everything
+except your doctype goes inside of the <code>html</code> element.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-18">
+    <section class="slide-content"><h3 id="example">Example</h3>
+<p>This is an example of a simple HTML 5 document layout. You won&#39;t need to worry about this today, but it&#39;s nice
+to know about.</p>
+<p><img src="./assets/HTML/html5.png" alt="HTML5 basic skeleton"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-19">
+    <section class="slide-content"><h3 id="debugging-html">Debugging HTML</h3>
+<p>Using the Chrome DevTools (we&#39;ll talk more about those in a later section!), you can look at the structure of
+HTML content on the page, as well as edit it live! Your edits won&#39;t be permanent, but it&#39;s nice to be able to tweak
+your HTML right in the browser when designing an interface.</p>
+<p>To open the DevTools:</p>
+<ol>
+<li>Press <code>cmd + option + i</code> on Mac, or <code>ctrl + shift + i</code> on Windows</li>
+<li>If you&#39;re not already there, navigate to the &quot;Elements&quot; tab.</li>
+<li>You should now be able to see and work with the HTML!</li>
+</ol>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-20">
+    <section class="slide-content"><h1 id="even-this-presentation-is-html-">Even this presentation is HTML!</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-21">
+    <section class="slide-content"><h3 id="html-resources">HTML Resources</h3>
+<ul>
+<li><a href="https://www.khanacademy.org/computing/computer-programming/html-css#intro-to-html">Introduction to HTML from Khan Academy</a></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-22">
+    <section class="slide-content"><h1 id="html-and-javascript">HTML and JavaScript</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-23">
+    <section class="slide-content"><h3 id="inline-javascript">Inline JavaScript</h3>
+<p>A basic webpage contains HTML tags and that&#39;s everything that we&#39;ve seen so far. But if we wanted to make things dynamic or interactive, we&#39;ll need JavaScript. We can add JavaScript by adding it inline to each of our HTML elements.</p>
+<p><img src="./assets/HTML/inline-js.png" alt="Inline JS"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-24">
+    <section class="slide-content"><h3 id="between-script-tags">Between script tags</h3>
+<p>Although we can add all of our dynamic logic inline, we can also write our JavaScript between script tags instead.</p>
+<p><img src="./assets/HTML/script-js.png" alt="Script JS"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-25">
+    <section class="slide-content"><h3 id="external-files">External files</h3>
+<p>The most common and preferred way is to write our JavaScript in a separate file. We can link to them using the src attribute of the script tag.</p>
+<p><img src="./assets/HTML/external-js-file.png" alt="External JS"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-26">
+    <section class="slide-content"><h1 id="javascript-fundamentals-">JavaScript Fundamentals 💪🏽</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-27">
+    <section class="slide-content"><h1 id="-br-where-does-code-run-">🖥️ 📱 📠 🗄<br />Where Does Code Run?</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-28">
+    <section class="slide-content"><h1 id="-small-style-font-size-60-margin-0-2rem-small-br-the-internet">🗄 <small style="font-size: 60%; margin: 0 2rem;">➡️</small> 🖥️<br />The Internet</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-29">
+    <section class="slide-content"><h2 id="also-the-browser-">Also, the Browser!</h2>
+<image style="border: none; height: 100%; width: auto;" src="./assets/fundamentals/js.png" /></section>
+  </div>
+  <div class="slide hidden" id="slide-30">
+    <section class="slide-content"><h3 id="javascript">JavaScript</h3>
+<p>A programming language that allows you to implement complex things on web pages.</p>
+<ul>
+<li>Interactivity (click, scroll, swipe, etc.)</li>
+<li>Saving/loading data</li>
+<li>Animated 2D/3D graphics</li>
+<li>and much more!</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-31">
+    <section class="slide-content"><h1 id="javascript">JavaScript</h1>
+<ul>
+<li>Can build interactive websites.</li>
+<li>Can build apps that don&#39;t need to be installed.</li>
+<li>Can build server side apps.</li>
+<li>Can build Native apps.</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-32">
+    <section class="slide-content"><h3 id="javascript-console">JavaScript Console</h3>
+<p><img src="./assets/fundamentals/console.gif" alt=""></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-33">
+    <section class="slide-content"><h3 id="3-ways-to-open-console-in-google-chrome">3 ways to open console in Google Chrome</h3>
+<ul>
+<li>View &gt; Developer &gt; JavaScript Console</li>
+<li><code>⌥ ⌘ J</code></li>
+<li>Right Click &gt; Inspect &gt; select the console tab</li>
+</ul>
+<p class="reference-link">
+» <a href="https://developers.google.com/web/tools/chrome-devtools/console">chrome-devtools/console</a>
+</p></section>
+  </div>
+  <div class="slide hidden" id="slide-34">
+    <section class="slide-content"><h1 id="hello-world">Hello World</h1>
+<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Hello World!'</span>);</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-35">
+    <section class="slide-content"><h1 id="grammar-formatting">Grammar &amp; Formatting</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-36">
+    <section class="slide-content"><h3 id="grammar-formatting-lines">Grammar &amp; Formatting – Lines</h3>
+<p><img src="./assets/fundamentals/lines.png" alt=""></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-37">
+    <section class="slide-content"><h3 id="grammar-formatting-semicolons">Grammar &amp; Formatting – Semicolons</h3>
+<ul>
+<li>A statement is instruction for the browser to execute.<ul>
+<li>A single statement could span multiple lines.</li>
+<li>Multiple statements can be written on a single line.</li>
+</ul>
+</li>
+<li>A program is a set of multiple statements.</li>
+</ul>
+<p>Add a semicolon <code>;</code> at the end of statements.</p>
+<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Hello World!'</span>);</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-38">
+    <section class="slide-content"><h3 id="grammar-formatting-comments">Grammar &amp; Formatting – Comments</h3>
+<ul>
+<li>Comments explain what is going on in the code.</li>
+<li>They are for other humans reading your code.</li>
+<li>The computer ignores comments.</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-comment">// This is a single line comment</span>
+<span class="hljs-keyword">var</span> value = <span class="hljs-number">1</span>;
+
+<span class="hljs-comment">/*
+  This is a
+  multi-line comment
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">return</span> a + b;
+}
+
+value = add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-39">
+    <section class="slide-content"><h3 id="grammar-formatting-indentation">Grammar &amp; Formatting – Indentation</h3>
+<p>Makes code easier to read</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> value = <span class="hljs-number">1</span>;
+
+<span class="hljs-comment">// A function that adds two numbers</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">return</span> a + b;
+}
+
+value = add(<span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-40">
+    <section class="slide-content"><h1 id="data-types">Data Types</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-41">
+    <section class="slide-content"><h1 id="string">String</h1>
+<h2 id="used-to-store-data-as-text-anything-between-quotes-will-be-understood-as-a-string">Used to store data as text. Anything between quotes will be understood as a string</h2>
+<pre><code class="lang-js"><span class="hljs-string">'I am a string.'</span>
+<span class="hljs-string">"I'm a string, but I need double-quotes or the computer will get confused by the apostrophe"</span>
+<span class="hljs-string">'5'</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-42">
+    <section class="slide-content"><h1 id="number">Number</h1>
+<h2 id="used-to-store-numbers-">Used to store numbers.</h2>
+<pre><code class="lang-js"><span class="hljs-number">4</span>
+<span class="hljs-number">3.333</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-43">
+    <section class="slide-content"><h3 id="array">Array</h3>
+<p>Used to store a list of data. An array is composed of different types, and can mix and match them. We&#39;ll talk more about them later.</p>
+<ul>
+<li><code>[1, 2, 3, 4, 5]</code><pre><code class="lang-js">[
+<span class="hljs-string">'I am a string in an Array'</span>,
+<span class="hljs-number">2</span>,
+[<span class="hljs-string">'I am an array in another array!'</span>],
+]</code></pre>
+</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-44">
+    <section class="slide-content"><h1 id="boolean">Boolean</h1>
+<h2 id="always-stores-either-true-or-false-that-s-it-">Always stores either <code>true</code> or <code>false</code>. That&#39;s it!!</h2>
+<pre><code class="lang-js"><span class="hljs-literal">true</span>
+<span class="hljs-literal">false</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-45">
+    <section class="slide-content"><h1 id="undefined">Undefined</h1>
+<h2 id="this-means-that-no-data-or-data-type-has-been-defined-yet-you-ll-see-this-in-the-dev-tools-console-sometimes-">This means that no data or data type has been defined yet. You&#39;ll see this in the dev tools console sometimes.</h2>
+<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">'The console is silly sometimes'</span>);
+=&gt; <span class="hljs-literal">undefined</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-46">
+    <section class="slide-content"><h1 id="other-types">Other Types</h1>
+<ul>
+<li>Objects</li>
+<li>Null</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-47">
+    <section class="slide-content"><h1 id="operations">Operations</h1>
+<h2 id="an-operation-is-a-calculation-similar-to-math-different-data-types-can-do-different-operations">An operation is a calculation. Similar to math, different data types can do different operations</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-48">
+    <section class="slide-content"><h1 id="nan">NaN</h1>
+<h2 id="-not-a-number-the-computer-couldn-t-figure-out-what-you-were-doing">&quot;Not a Number&quot; - the computer couldn&#39;t figure out what you were doing</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-49">
+    <section class="slide-content"><h1 id="computers-are-dumb">Computers are dumb</h1>
+<h2 id="javascript-will-try-its-best-to-figure-out-what-you-mean-but-it-s-best-if-it-doesn-t-have-to-guess">JavaScript will try its best to figure out what you mean, but it&#39;s best if it doesn&#39;t have to guess</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-50">
+    <section class="slide-content"><h1 id="variables">Variables</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-51">
+    <section class="slide-content"><h1 id="a-variable-is-a-piece-of-stored-data">A variable is a piece of stored data</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-52">
+    <section class="slide-content"><h1 id="a-variable-can-be-anything">A variable can be anything</h1>
+<h2 id="it-s-kind-of-like-a-placeholder">It&#39;s kind of like a placeholder</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-53">
+    <section class="slide-content"><h1 id="making-a-variable">Making a variable</h1>
+<p><img src="./assets/fundamentals/variables/variableanatomy.png" alt="Variable Example!"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-54">
+    <section class="slide-content"><h1 id="declaration">Declaration</h1>
+<h2 id="-const-let-or-var-"><code>const</code>, <code>let</code> or <code>var</code></h2>
+<p><img src="./assets/fundamentals/variables/variableanatomy.png" alt="Variable Example!"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-55">
+    <section class="slide-content"><h1 id="what-s-the-difference-">What&#39;s the difference?</h1>
+<ul>
+<li><code>const</code> cannot be overwritten</li>
+<li><code>let</code> can be overwritten</li>
+<li><code>var</code> is old</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-56">
+    <section class="slide-content"><pre><code class="lang-js"><span class="hljs-keyword">let</span> myName = <span class="hljs-string">'Renee'</span>;
+myName = <span class="hljs-string">'renvrant'</span>;
+
+<span class="hljs-comment">// myName is now 'renvrant'</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-57">
+    <section class="slide-content"><h1 id="variable-name">Variable Name</h1>
+<h2 id="your-variable-name-is-how-you-use-it-in-code">Your variable name is how you use it in code</h2>
+<p><img src="./assets/fundamentals/variables/variableanatomy.png" alt="Variable Example!"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-58">
+    <section class="slide-content"><pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(myName)
+=&gt; <span class="hljs-string">'Renee'</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-59">
+    <section class="slide-content"><h1 id="assignment">Assignment</h1>
+<h2 id="it-s-an-assignment-sign-not-an-equals-sign-">It&#39;s an assignment sign, not an equals sign!</h2>
+<p><img src="./assets/fundamentals/variables/variableanatomy.png" alt="Variable Example!"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-60">
+    <section class="slide-content"><h1 id="value">Value</h1>
+<h2 id="the-piece-of-data-the-variable-represents">The piece of data the variable represents</h2>
+<p><img src="./assets/fundamentals/variables/variableanatomy.png" alt="Variable Example!"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-61">
+    <section class="slide-content"><h1 id="if-else">If/Else</h1>
+<h2 id="teaching-our-program-to-make-decisions">Teaching our program to make decisions</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-62">
+    <section class="slide-content"><h1 id="if-statements-let-our-program-do-some-things-and-not-others">If Statements let our program do some things and not others</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-63">
+    <section class="slide-content"><p><img src="./assets/fundamentals/ifelse/ifelse.png" alt="Variable Example!"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-64">
+    <section class="slide-content"><h1 id="condition">Condition</h1>
+<h2 id="code-that-your-program-will-check-first-to-see-how-it-should-proceed">Code that your program will check first to see how it should proceed</h2>
+<p><img src="./assets/fundamentals/ifelse/ifelse.png" alt="Variable Example!"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-65">
+    <section class="slide-content"><h1 id="your-condition-is-a-boolean">Your condition is a Boolean</h1>
+<h2 id="javascript-will-turn-it-into-either-true-or-false-">JavaScript will turn it into either <code>true</code> or <code>false</code></h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-66">
+    <section class="slide-content"><h3 id="-gotcha-alert-">&quot;Gotcha&quot; Alert:</h3>
+<p>Some basic data types can return <code>false</code> by default! It&#39;s best to be aware of these things, as they could cause trouble in your code:</p>
+<ul>
+<li><code>undefined</code></li>
+<li><code>null</code></li>
+<li><code>0</code></li>
+<li><code>&quot;&quot;</code> (An empty string)</li>
+<li><code>NaN</code></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-67">
+    <section class="slide-content"><h1 id="body">Body</h1>
+<h2 id="code-that-your-program-will-only-run-when-the-condition-is-true-">Code that your program will only run when the condition is <code>true</code></h2>
+<p><img src="./assets/fundamentals/ifelse/ifelse.png" alt="Variable Example!"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-68">
+    <section class="slide-content"><h1 id="unreachable-code">Unreachable code</h1>
+<pre><code class="lang-js"><span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span>) { <span class="hljs-comment">// This is the Boolean type true, so condition will always be true</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'I will always be printed!'</span>);
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'What about me?'</span>); <span class="hljs-comment">// This will never run</span>
+}</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-69">
+    <section class="slide-content"><h1 id="comparison-operators">Comparison operators</h1>
+<h2 id="comparisons-operators-let-us-build-conditions">Comparisons operators let us build conditions</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-70">
+    <section class="slide-content"><pre><code class="lang-js">=== <span class="hljs-comment">// Equals</span>
+&lt; <span class="hljs-comment">// Less Than</span>
+&gt; <span class="hljs-comment">// Greater Than</span>
+&lt;= <span class="hljs-comment">// Less than or Equal To</span>
+&gt;= <span class="hljs-comment">// Greater than or Equal To</span>
+&amp;&amp; <span class="hljs-comment">// AND</span>
+|| <span class="hljs-comment">// OR</span>
+!== <span class="hljs-comment">// NOT Equal to</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-71">
+    <section class="slide-content"><h1 id="you-can-nest-if-statements-">You can nest if statements!</h1>
+<h2 id="now-your-program-is-getting-complicated">Now your program is getting complicated</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-72">
+    <section class="slide-content"><h1 id="looping">Looping</h1>
+<h2 id="again-again-again-">Again! Again! Again!</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-73">
+    <section class="slide-content"><h3 id="when-why-would-i-want-to-use-a-loop-">When/why would I want to use a loop?</h3>
+<p>Loops are great for all kinds of reasons. The further you come along in your development career, the more and more you&#39;ll
+find yourself using loops. Here are a few examples of how loops can be handy:</p>
+<ul>
+<li>Games often use a &quot;Game Loop&quot; to update and compute game physics</li>
+<li>Asking a user for some input until they supply valid input</li>
+<li>Looking through a collection of data you have and doing something with each item</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-74">
+    <section class="slide-content"><h3 id="for-loops-">For loops!</h3>
+<p>For loops are your most basic loop in JavaScript. Don&#39;t be intimidated by the syntax! It takes some getting use to, but
+once you&#39;ve got that down it really is a super handy tool!</p>
+<p><img src="./assets/fundamentals/loops/for-loop.png" alt="For Loop Example"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-75">
+    <section class="slide-content"><h3 id="let-s-break-down-the-syntax">Let&#39;s break down the syntax</h3>
+<p>Inside the parentheses for the for loop we have three different parts.</p>
+<p><img src="./assets/fundamentals/loops/break-down-for.png" alt="Breakdown of the for loop"></p>
+<p>The <code>++</code> sytax <strong>increments</strong> the <code>i</code> variable. So if <code>i</code> was equal to <code>1</code>, <code>++</code> will make it <code>2</code>.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-76">
+    <section class="slide-content"><h3 id="while-loops-">While Loops!</h3>
+<p>This loop continues to run as long as the condition you pass to it remains true!</p>
+<p><img src="./assets/fundamentals/loops/while-loop.png" alt="While Loop Example!"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-77">
+    <section class="slide-content"><h3 id="using-a-for-loop-to-go-through-an-array">Using a for loop to go through an array</h3>
+<p>In this example, we go from <code>0</code> to the <strong>length</strong> of the array, and print out the item from the array in each loop.</p>
+<p><img src="./assets/fundamentals/loops/for-array.png" alt="For Loop with Array"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-78">
+    <section class="slide-content"><h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://www.khanacademy.org/computing/computer-programming/programming#looping">Lesson on Looping from Khan Acadmey</a></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-79">
+    <section class="slide-content"><h1 id="helper-functions">Helper Functions</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-80">
+    <section class="slide-content"><h3 id="-math-random-"><code>Math.random()</code></h3>
+<p>Generates a number between <code>0</code> and <code>1</code></p>
+<image style="border: none; height: 50%; width: auto;" src="./assets/fundamentals/random.gif" />
+
+<p class="reference-link">
+» <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random">Math/random</a>
+</p></section>
+  </div>
+  <div class="slide hidden" id="slide-81">
+    <section class="slide-content"><h3 id="parse-numbers">Parse Numbers</h3>
+<pre><code class="lang-js"><span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'17'</span>);
+<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'015'</span>);
+<span class="hljs-built_in">parseInt</span>(<span class="hljs-number">15.99</span>);
+<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'15,123'</span>);
+<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'1111'</span>);</code></pre>
+<p class="reference-link">
+» <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt">parseInt</a>
+</p></section>
+  </div>
+  <div class="slide hidden" id="slide-82">
+    <section class="slide-content"><h3 id="array-methods">Array Methods</h3>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> data = [<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+
+<span class="hljs-comment">// Add items to an array</span>
+data.push(<span class="hljs-number">5</span>);
+
+<span class="hljs-comment">// Loop over all items in an array</span>
+<span class="hljs-comment">// The function receives each item and its index one at a time</span>
+data.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value, index</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(index, value);
+});</code></pre>
+<p class="reference-link">
+» <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>
+</p></section>
+  </div>
+  <div class="slide hidden" id="slide-83">
+    <section class="slide-content"><h3 id="exercise">Exercise</h3>
+<ol>
+<li><a href="https://repl.it/teacher/assignments/245474">Push and Random</a></li>
+<li><a href="https://repl.it/teacher/assignments/245475">Parse Numbers</a></li>
+<li><a href="https://repl.it/teacher/assignments/245476">Parse Numbers #2</a> (advanced challenge 🏋🏽‍)</li>
+</ol>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-84">
+    <section class="slide-content"><h3 id="date">Date</h3>
+<p>Dates in JavaScript are stored as a value that is the number of milliseconds since 1 January, 1970 UTC.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(); <span class="hljs-comment">// right now</span>
+<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(dateString); <span class="hljs-comment">// eg: '25 May 1986'</span>
+<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(year, month, date); <span class="hljs-comment">// 2017, 7, 9</span></code></pre>
+<p class="reference-link">
+» <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date">Date</a>
+</p></section>
+  </div>
+  <div class="slide hidden" id="slide-85">
+    <section class="slide-content"><h3 id="where-can-i-learn-more-">Where Can I Learn More?</h3>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">MDN</a></li>
+<li><a href="https://github.com/getify/You-Dont-Know-JS">You Don&#39;t Know JS</a></li>
+<li><a href="https://javascript30.com/">JavaScript 30</a></li>
+<li><a href="http://jstherightway.org/#the-good-parts">JS the Right Way – The Good Parts</a></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-86">
+    <section class="slide-content"><h1 id="functions">Functions</h1>
+<h2 id="a-good-developer-is-a-lazy-one">A good developer is a lazy one</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-87">
+    <section class="slide-content"><h3 id="there-are-three-different-parts-to-a-function">There are three different parts to a Function</h3>
+<ul>
+<li>The function name</li>
+<li>The arguments for the function</li>
+<li>The body of the function</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-88">
+    <section class="slide-content"><h3 id="referrencing-your-function-vs-calling-your-function">Referrencing your function VS &#39;Calling&#39; your function</h3>
+<p>Once you&#39;ve created a function, you can do two things with it:</p>
+<ul>
+<li>You can <code>call</code> it: This means telling your function to actually execute the code in it&#39;s body</li>
+<li>You can &quot;reference&quot; it: This means just talking about the function, but not actually executing it&#39;s code.</li>
+</ul>
+<p>When you <code>call</code> a function, you attach a pair of parentheses <code>()</code> to the end of it&#39;s name. For example, if you have a function
+called <code>sayHello</code>, you would call it like this: <code>sayHello()</code>. Any arguments you have will go between the parentheses.</p>
+<p>Referencing a function is done simply by writing it&#39;s name. With our previous example, you just have to leave off the parenthesis.
+<code>sayHello</code>.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-89">
+    <section class="slide-content"><h3 id="give-this-a-try-with-the-console-log-function-">Give this a try with the <code>console.log</code> function!</h3>
+<p>Type <code>console.log</code> in your console, and it should return something that looks like this:</p>
+<p><img src="./assets/fundamentals/functions/ref-console-log.png" alt="Reference console.log"></p>
+<p>If you call the function like <code>console.log(&#39;any string!&#39;);</code> it should print the string <code>&#39;any string!&#39;</code> to the console.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-90">
+    <section class="slide-content"><h3 id="passing-information-to-your-function">Passing information to your function</h3>
+<p>When functions are defined, you specify what information it will accept. You do this by adding variable
+names into the parentheses of your function:</p>
+<pre><code class="lang-JavaScript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">myCoolFunction</span>(<span class="hljs-params">firstVar, secondVar, thirdVar</span>) </span>{...}
+myCoolFunction(<span class="hljs-number">5</span>, <span class="hljs-string">'hello'</span>, <span class="hljs-number">52.3</span>);</code></pre>
+<p>The function body will then use those values in place of the variables you set as arguments!</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-91">
+    <section class="slide-content"><h3 id="telling-your-function-what-to-do">Telling your function what to do</h3>
+<p>Functions will do whatever you tell them to do! Any of the lines of code we&#39;ve showed so far can work inside of a function.
+Think of each line as instructions for your function to run one after another. Your instructions need to be placed between a functions
+curly braces like this:</p>
+<pre><code class="lang-JavaScript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">someName</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// Your instructions go here!</span>
+}</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-92">
+    <section class="slide-content"><h1 id="let-s-see-some-examples-">Let&#39;s see some examples!</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-93">
+    <section class="slide-content"><h3 id="example-simple-adding-function">Example: Simple adding function</h3>
+<p><img src="./assets/fundamentals/functions/add-func.png" alt="Adding function"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-94">
+    <section class="slide-content"><h3 id="wait-what-am-i-returning-here-">Wait, what am I returning here?</h3>
+<p>The keyword <code>return</code> is used to get information out of the function to be used elsewhere!
+You don&#39;t need to include the <code>return</code> keyword, but you&#39;ll find you want your function to return some data to you more often
+than not. Be aware that once you return from a function, that function is complete. Anything after the return is <code>unreachable code</code>.</p>
+<p><img src="./assets/fundamentals/functions/return-keyword.png" alt="Return keyword exits function"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-95">
+    <section class="slide-content"><h3 id="example-a-function-with-no-arguments">Example: A Function with no arguments</h3>
+<p><img src="./assets/fundamentals/functions/no-args-func.png" alt="No Arguments Function"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-96">
+    <section class="slide-content"><h3 id="exercise-3mins-build-your-own-function-">Exercise (3mins): Build your own function!</h3>
+<p>Build a simple named function with one or more lines of code in the body.</p>
+<h2 id="some-ideas-for-what-your-functions-could-do-">Some ideas for what your functions could do:</h2>
+<ul>
+<li>Do some arithmetic with numbers and return the result</li>
+<li>take a string argument, and print the string multiple times</li>
+<li>Make a &quot;greeting&quot; function that takes in the string of a name and prints a greeting with it</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-97">
+    <section class="slide-content"><h1 id="resources">Resources</h1>
+<ul>
+<li><a href="https://www.khanacademy.org/computing/computer-programming/programming/functions/p/functions">Lesson on Functions from Khan Academy</a></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-98">
+    <section class="slide-content"><h1 id="debugging">Debugging</h1>
+<h2 id="your-stuff-_will_-break">Your stuff <em>will</em> break</h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-99">
+    <section class="slide-content"><h1 id="chrome-devtools">Chrome DevTools</h1>
+<h2 id="-cmd-option-i-or-ctrl-shift-i-"><code>cmd + option + i</code> or <code>ctrl + shift + i</code></h2>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-100">
+    <section class="slide-content"><h3 id="the-console">The console</h3>
+<p>Up until now, we&#39;ve been using <a href="http://repl.it">repl.it</a> to run our JavaScript. Though, DevTools has
+a console built right into it that we can use to help us debug our programs! Once you have DevTools open,
+navigate to the <code>console</code> tab. It should look like this:</p>
+<p><img src="./assets/fundamentals/debugging/dt-console.png" alt="DevTools Console"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-101">
+    <section class="slide-content"><h3 id="using-the-console-for-debugging">Using the console for debugging</h3>
+<p>When you open the console on any webpage, you have access to the code you&#39;ve attached to that page. This means
+you can check the value of variables you&#39;ve defined, run functions you&#39;ve created, etc, etc. (there are some
+exceptions to what DevTools can let you inspect this way, but that&#39;s not in the <em>scope</em> of this workshop!)</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-102">
+    <section class="slide-content"><h3 id="the-elements-tab">The elements tab</h3>
+<p>The elements tab that we briefly looked at before is helpful as well, to confirm that changes to the HTML you make from
+JavaScript are indeed taking effect. If something isn&#39;t working right, looking at the elements tab may help you find out why.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-103">
+    <section class="slide-content"><h3 id="some-additional-resources-for-further-learning">Some additional resources for further learning</h3>
+<ul>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/javascript/">Introduction to Debugging with Chrome DevTools</a></li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints">Creating breakpoints in DevTools</a></li>
+<li><a href="https://developers.google.com/web/tools/chrome-devtools/javascript/reference#stepping">Guide to stepping through code in DevTools</a></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-104">
+    <section class="slide-content"><h1 id="jquery-">jQuery ⚡</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-105">
+    <section class="slide-content"><h3 id="browser-apis-and-dom">Browser APIs and DOM</h3>
+<ul>
+<li>DOM stands for Document Object Model.</li>
+<li>It is the JavaScript representation on the HTML you write.</li>
+<li>JavaScript can manipulate the DOM using the browser APIs<ul>
+<li>API are rules (<em>code</em>) that allow software programs to talk to each other.</li>
+</ul>
+</li>
+</ul>
+<p class="reference-link">
+» <a href="https://css-tricks.com/dom/">What is the DOM?</a>
+</p></section>
+  </div>
+  <div class="slide hidden" id="slide-106">
+    <section class="slide-content"><h3 id="so-many-browsers-image-by-kosamari-https-twitter-com-kosamari-media-">So Many Browsers! (image by <a href="https://twitter.com/kosamari/media">@kosamari</a>)</h3>
+<p>Browsers have similar APIs but, not 100% exactly the same. JavaScript can behave slightly differently in each browser.</p>
+<image style="height: 60%; width: auto;" src="./assets/jquery/browsers.jpg" /></section>
+  </div>
+  <div class="slide hidden" id="slide-107">
+    <section class="slide-content"><h3 id="jquery">jQuery</h3>
+<ul>
+<li>The most popular library on the web today.</li>
+<li>Used for tasks such as:<ul>
+<li>manipulating the webpage</li>
+<li>responding to user events</li>
+<li>fetching data from the server</li>
+<li>animations</li>
+<li>and much more!</li>
+</ul>
+</li>
+<li>Easier to use than the DOM APIs</li>
+<li>Provides consistent behaviour across all browsers.</li>
+</ul>
+<p class="reference-link">
+» <a href="https://www.khanacademy.org/computing/computer-programming/html-js-jquery/jquery-intro/v/what-is-jquery">What is jQuery?</a>
+</p></section>
+  </div>
+  <div class="slide hidden" id="slide-108">
+    <section class="slide-content"><p>A library is a JavaScript file that contains a bunch of functions. It makes development easier since we can reuse code for multiple projects.</p>
+<div style="margin-top: 8rem; margin-bottom: 1rem; padding: 2rem; background-color: coral; color: black; font-weight: bold; text-align: center;">
+  jQuery
+</div>
+
+<div style="display: flex;">
+  <div style="flex: 1; padding: 2rem; background-color: antiquewhite; color: black; font-weight: bold; margin-right: 1rem;">
+    JavaScript DOM
+  </div>
+
+  <div style="flex: 1; padding: 2rem; background-color: burlywood; color: black; font-weight: bold;">
+    Browser APIs
+  </div>
+</div></section>
+  </div>
+  <div class="slide hidden" id="slide-109">
+    <section class="slide-content"><h1 id="in-javascript-it-is-available-as-br-and-jquery-">In JavaScript it is available as<br/><code>$</code> and <code>jQuery</code></h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-110">
+    <section class="slide-content"><h1 id="selectors">Selectors</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-111">
+    <section class="slide-content"><h3 id="selectors">Selectors</h3>
+<p>Selectors are used to <em>find</em> (or select) HTML elements based on their name, id, class and other attributes.</p>
+<p>In the example below <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code> and <code>&lt;a&gt;</code> are elements. <a href="https://thimble.mozilla.org/en-US/user/winkervsbecks/1065054">Elements example</a></p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hi! 👋🏽<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>My name is Varun<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>I am a JavaScript developer<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://github.com/winkerVSbecks"</span>&gt;</span>github<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://twitter.com/winkerVSbecks"</span>&gt;</span>twitter<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://codepen.io/winkerVSbecks/"</span>&gt;</span>codePen<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-112">
+    <section class="slide-content"><h3 id="type-selectors">Type selectors</h3>
+<p>Select all elements by their name.</p>
+<ul>
+<li><code>p</code> would select all paragraphs</li>
+<li><code>a</code> would select all anchor tags (links)</li>
+<li><code>section</code> would select all section</li>
+</ul>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"google.com"</span>&gt;</span>google<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-113">
+    <section class="slide-content"><h3 id="id-selectors">ID selectors</h3>
+<ul>
+<li>Select one element by a unique identifier.</li>
+<li>We can attach an ID to the element using the <code>id</code> attribute.</li>
+<li>When used in a selector the class name needs to be prefixed by a <code>#</code><ul>
+<li><code>#main</code> would select the first section</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"main"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">section</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"other"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-114">
+    <section class="slide-content"><h3 id="class-selectors">Class selectors</h3>
+<ul>
+<li>Select all elements by a class name.</li>
+<li>We can attach classes to elements using the <code>class</code> attribute.</li>
+<li>When used in a selector the class name needs to be prefixed by a <code>.</code><ul>
+<li><code>.lead</code> would select the first paragraph</li>
+<li><code>.google-links</code> would select the google &amp; gmail links</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">section</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"lead"</span>&gt;</span>Lorem ipsum dolor sit amet<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"google-links"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"google.com"</span>&gt;</span>google<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"google-links"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"gmail.com"</span>&gt;</span>gmail<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"facebook.com"</span>&gt;</span>facebook<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">section</span>&gt;</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-115">
+    <section class="slide-content"><h3 id="selectors-summary">Selectors Summary</h3>
+<ul>
+<li>Element selector to target all elements of a certain type</li>
+<li>Class selector for all elements which have the same class (<code>.</code>)</li>
+<li>ID selector for one element which has a unique id (<code>#</code>)</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-116">
+    <section class="slide-content"><h3 id="using-selectors-with-jquery">Using Selectors with jQuery</h3>
+<pre><code class="lang-js"><span class="hljs-comment">// Element selector</span>
+$(<span class="hljs-string">'p'</span>)
+
+<span class="hljs-comment">// Class selector</span>
+$(<span class="hljs-string">'.link'</span>)
+
+<span class="hljs-comment">// ID selector</span>
+$(<span class="hljs-string">'#profile-picture'</span>)</code></pre>
+<p>🔈 Open the dev-tools/console and use jQuery + selectors to <em>find</em> elements of this slide.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-117">
+    <section class="slide-content"><h3 id="exercise">Exercise</h3>
+<ul>
+<li>Write a selector to target all paragraphs <code>&lt;p&gt;</code></li>
+<li>Write a selector to target all links (<code>&lt;a&gt;</code>) except the email link</li>
+<li>Write a selector to target just the twitter link</li>
+</ul>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hi! 👋🏽<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>My name is Varun<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>I am a JavaScript developer<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://github.com/winkerVSbecks"</span>&gt;</span>github<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://twitter.com/winkerVSbecks"</span>&gt;</span>twitter<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://codepen.io/winkerVSbecks/"</span>&gt;</span>codePen<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"mailto:someone@something.com"</span>&gt;</span>email<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span></code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-118">
+    <section class="slide-content"><h3 id="css">CSS</h3>
+<p>Allows us to control the visual styles of our HTML content. Styles such as colours, sizes, fonts, layout, etc.</p>
+<image style="height: 60%; width: auto;" src="./assets/jquery/cake.png" /></section>
+  </div>
+  <div class="slide hidden" id="slide-119">
+    <section class="slide-content"><h3 id="css">CSS</h3>
+<p>The selectors we have been using come from CSS. In CSS we use those selectors to target elements and edit their styles.</p>
+<pre><code class="lang-css"><span class="hljs-selector-class">.link</span> {
+  <span class="hljs-attribute">color</span>: red;
+  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">18px</span>;
+  <span class="hljs-attribute">font-style</span>: italic;
+}</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-120">
+    <section class="slide-content"><h3 id="more-on-selectors">More on Selectors</h3>
+<ul>
+<li><p><a href="https://www.khanacademy.org/computing/computer-programming/html-css-js/html-js-dom-access/p/finding-elements-by-id">Finding Elements by ID</a></p>
+</li>
+<li><p><a href="https://www.khanacademy.org/computing/computer-programming/html-js-jquery#jquery-dom-access">jQuery DOM Access</a></p>
+</li>
+<li><p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors">CSS Selectors</a></p>
+</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-121">
+    <section class="slide-content"><h1 id="jquery-events-">jQuery Events ️</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-122">
+    <section class="slide-content"><h3 id="what-are-events-">What are events?</h3>
+<p>Events are how we respond to user actions. Some examples:</p>
+<ul>
+<li>Clicking an element</li>
+<li>Pressing a key on your keyboard</li>
+<li>Scrolling down a webpage</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-123">
+    <section class="slide-content"><h3 id="adding-jquery">Adding jQuery</h3>
+<p>The entire jQuery library is just a single JavaScript file and can be referenced just like any other JavaScript file. We can download the file and use the script tag normally</p>
+<pre><code>&lt;body&gt;
+  &lt;script src=&quot;jquery-3.2.1.min.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-124">
+    <section class="slide-content"><h3 id="we-can-also-reference-it-directly-using-hosted-servers">We can also reference it directly using hosted servers</h3>
+<p>Both Google and Microsoft are used the most</p>
+<pre><code>&lt;body&gt;
+  &lt;!-- Google Hosted --&gt;
+  &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-125">
+    <section class="slide-content"><h3 id="click-events">Click Events</h3>
+<p>Let&#39;s explore how we can respond to a user click event by adding a button and an empty span element</p>
+<p><img src="./assets/jquery/html.png" alt="Button HTML"></p>
+<p>This outputs a button and nothing else</p>
+<p><img src="./assets/jquery/button.png" alt="Button"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-126">
+    <section class="slide-content"><h3 id="click-events">Click Events</h3>
+<p>Now let&#39;s write some jQuery in script.js to set an initial value to the empty span element</p>
+<p><img src="./assets/jquery/initial-value.png" alt="Initial Value"></p>
+<p>Notice that we&#39;re not hard coding a value in our HTML that doesn&#39;t change - we&#39;re going to use jQuery to control this value dynamically</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-127">
+    <section class="slide-content"><h3 id="click-events">Click Events</h3>
+<p>This outputs a button with a number of 0 besides it</p>
+<p><img src="./assets/jquery/button-and-initial-value.png" alt="Button and Initial Value"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-128">
+    <section class="slide-content"><h3 id="click-events">Click Events</h3>
+<p>Clicking the button doesn&#39;t do anything, so we&#39;ll need to attach an onclick event listener to our button element</p>
+<p><img src="./assets/jquery/click-function.png" alt="Button Click Event"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-129">
+    <section class="slide-content"><h3 id="click-events">Click Events</h3>
+<p>Now every time we click the button, the value gets incremented by 1!</p>
+<p><img src="./assets/jquery/button-and-click.png" alt="Button and Click"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-130">
+    <section class="slide-content"><h3 id="exercise">Exercise</h3>
+<ul>
+<li>Change the increment to 2 instead of 1 everytime we click the button</li>
+<li>Add another button that allows us to decrement the value of the counter by 1</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-131">
+    <section class="slide-content"><h1 id="change-css-with-jquery">Change CSS with jQuery</h1>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-132">
+    <section class="slide-content"><h3 id="change-css-with-jquery">Change CSS with jQuery</h3>
+<p>We&#39;ll explore using a click event to modify items on a webpage again, but this time we&#39;ll look at how to change CSS instead.</p>
+<p><img src="./assets/jquery/text-and-button.png" alt="Text and Button"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-133">
+    <section class="slide-content"><h3 id="change-css-with-jquery">Change CSS with jQuery</h3>
+<p>This outputs some text with a button:</p>
+<p><img src="./assets/jquery/text-and-button-output.png" alt="Text and Button"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-134">
+    <section class="slide-content"><h3 id="change-css-with-jquery">Change CSS with jQuery</h3>
+<p>Now let&#39;s write some jQuery in to modify the styles of our title element.</p>
+<p><img src="./assets/jquery/change-title-background.png" alt="Change Title Background"></p>
+<p>Notice that we use the .title selector to identify which element to modify.</p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-135">
+    <section class="slide-content"><h3 id="change-css-with-jquery">Change CSS with jQuery</h3>
+<p>If we now click the button in our webpage, we&#39;ll see the background of the title change!</p>
+<p><img src="./assets/jquery/change-title-output.png" alt="Change Title Background"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-136">
+    <section class="slide-content"><h3 id="change-css-with-jquery">Change CSS with jQuery</h3>
+<p>We can combine changing multiple CSS attributes by passing in an object.</p>
+<p><img src="./assets/jquery/change-multiple.png" alt="Change Multiple"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-137">
+    <section class="slide-content"><h3 id="change-css-with-jquery">Change CSS with jQuery</h3>
+<p>Now clicking the button changes the title background, color and size.</p>
+<p><img src="./assets/jquery/change-multiple-output.png" alt="Change Multiple"></p>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-138">
+    <section class="slide-content"><h3 id="exercise">Exercise</h3>
+<ul>
+<li>Modify the click method to change the entire background color to red and not the .title element (hint: body)</li>
+<li>Add a condition so that the every time you click the button, it alternates between red background/white text and white background/black text</li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-139">
+    <section class="slide-content"><h3 id="resources">Resources</h3>
+<ul>
+<li><a href="https://www.codecademy.com/learn/jquery">Codecademy - Learn jQuery</a></li>
+<li><a href="https://www.codeschool.com/courses/try-jquery">CodeSchool - Try jQuery</a></li>
+</ul>
+</section>
+  </div>
+  <div class="slide hidden" id="slide-140">
+    <section class="slide-content"><h1 id="final-project">Final project</h1>
+<p>link to repl</p>
+</section>
+  </div>
+  <div class="slide hidden author-slide" id="slide-141">
+    <section class="slide-content"><div class="author">
+  <h1 class="name">Renee Vrantsidis, Houssein Djirdeh, Raven Avalon &amp; Varun Vachhar</h1>
+</div>
+</section>
+  </div>
+
+  <div class="controls">
+    <div class="arrow prev"></div>
+    <div class="arrow next"></div>
+  </div>
+
+
+  <script type="text/javascript">
+    /**
+ * Returns the current page number of the presentation.
+ */
+function currentPosition() {
+  return parseInt(document.querySelector('.slide:not(.hidden)').id.slice(6));
+}
+
+
+/**
+ * Navigates forward n pages
+ * If n is negative, we will navigate in reverse
+ */
+function navigate(n) {
+  var position = currentPosition();
+  var numSlides = document.getElementsByClassName('slide').length;
+
+  /* Positions are 1-indexed, so we need to add and subtract 1 */
+  var nextPosition = (position - 1 + n) % numSlides + 1;
+
+  /* Normalize nextPosition in-case of a negative modulo result */
+  nextPosition = (nextPosition - 1 + numSlides) % numSlides + 1;
+
+  document.getElementById('slide-' + position).classList.add('hidden');
+  document.getElementById('slide-' + nextPosition).classList.remove('hidden');
+
+  updateProgress();
+  updateURL();
+  updateTabIndex();
+}
+
+
+/**
+ * Updates the current URL to include a hashtag of the current page number.
+ */
+function updateURL() {
+  window.history.replaceState({} , null, '#' + currentPosition());
+}
+
+
+/**
+ * Sets the progress indicator.
+ */
+function updateProgress() {
+  var progressBar = document.querySelector('.progress-bar');
+
+  if (progressBar !== null) {
+    var numSlides = document.getElementsByClassName('slide').length;
+    var position = currentPosition() - 1;
+    var percent = (numSlides === 1) ? 100 : 100 * position / (numSlides - 1);
+    progressBar.style.width = percent.toString() + '%';
+  }
+}
+
+
+/**
+ * Removes tabindex property from all links on the current slide, sets
+ * tabindex = -1 for all links on other slides. Prevents slides from appearing
+ * out of control.
+ */
+function updateTabIndex() {
+  var allLinks = document.querySelectorAll('.slide a');
+  var position = currentPosition();
+  var currentPageLinks = document.getElementById('slide-' + position).querySelectorAll('a');
+  var i;
+
+  for (i = 0; i < allLinks.length; i++) {
+    allLinks[i].setAttribute('tabindex', -1);
+  }
+
+  for (i = 0; i < currentPageLinks.length; i++) {
+    currentPageLinks[i].removeAttribute('tabindex');
+  }
+}
+
+/**
+ * Determines whether or not we are currently in full screen mode
+ */
+function isFullScreen() {
+  return document.fullscreenElement ||
+         document.mozFullScreenElement ||
+         document.webkitFullscreenElement ||
+         document.msFullscreenElement;
+}
+
+/**
+ * Toggle fullScreen mode on document element.
+ * Works on chrome (>= 15), firefox (>= 9), ie (>= 11), opera(>= 12.1), safari (>= 5).
+ */
+function toggleFullScreen() {
+  /* Convenient renames */
+  var docElem = document.documentElement;
+  var doc = document;
+
+  docElem.requestFullscreen =
+      docElem.requestFullscreen ||
+      docElem.msRequestFullscreen ||
+      docElem.mozRequestFullScreen ||
+      docElem.webkitRequestFullscreen.bind(docElem, Element.ALLOW_KEYBOARD_INPUT);
+
+  doc.exitFullscreen =
+      doc.exitFullscreen ||
+      doc.msExitFullscreen ||
+      doc.mozCancelFullScreen ||
+      doc.webkitExitFullscreen;
+
+  isFullScreen() ? doc.exitFullscreen() : docElem.requestFullscreen();
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Update the tabindex to prevent weird slide transitioning
+  updateTabIndex();
+
+  // If the location hash specifies a page number, go to it.
+  var page = window.location.hash.slice(1);
+  if (page) {
+    navigate(parseInt(page) - 1);
+  }
+
+  document.onkeydown = function (e) {
+    var kc = e.keyCode;
+
+    // left, down, H, J, backspace, PgUp - BACK
+    // up, right, K, L, space, PgDn - FORWARD
+    // enter - FULLSCREEN
+    if (kc === 37 || kc === 40 || kc === 8 || kc === 72 || kc === 74 || kc === 33) {
+      navigate(-1);
+    } else if (kc === 38 || kc === 39 || kc === 32 || kc === 75 || kc === 76 || kc === 34) {
+      navigate(1);
+    } else if (kc === 13) {
+      toggleFullScreen();
+    }
+  };
+
+  if (document.querySelector('.next') && document.querySelector('.prev')) {
+    document.querySelector('.next').onclick = function (e) {
+      e.preventDefault();
+      navigate(1);
+    };
+
+    document.querySelector('.prev').onclick = function (e) {
+      e.preventDefault();
+      navigate(-1);
+    };
+  }
+});
+
+  </script>
+</body>
+</html>

@@ -6,7 +6,7 @@
 
 Selectors are used to _find_ (or select) HTML elements based on their name, id, class and other attributes.
 
-In the example below `<h1>`, `<p>` and `<a>` are elements.
+In the example below `<h1>`, `<p>` and `<a>` are elements. [Elements example](https://thimble.mozilla.org/en-US/user/winkervsbecks/1065054)
 
 ```html
 <h1>Hi! 👋🏽</h1>
