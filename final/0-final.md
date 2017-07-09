@@ -1,3 +1,7 @@
-# Final project
+# Final project 💎 📄 ✂️
 
-link to repl
++ We are going to build a Rock Paper Scissors game!
+
++ Go to [Rock Paper Scissors Thimble Project](https://thimbleprojects.org/winkervsbecks/295358/) and hit remix.
+
++ The solution is available here: [github.com/sistercode/final](https://github.com/winkerVSbecks/sistercode/tree/master/final)
