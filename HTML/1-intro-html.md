@@ -4,7 +4,7 @@
 
 ### Components of a webpage
 
-Typically, an HTML page will have parts to it:
+Typically, an HTML page will have two main parts to it:
 
 - The `head`. This is where you can specify meta information like the title of your page
 - The `Body`. This is where the actual structure of your webpage goes

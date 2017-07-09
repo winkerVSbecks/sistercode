@@ -7,7 +7,7 @@
 --
 
 # A variable can be anything
-It's kind of like a placeholder
+## It's kind of like a placeholder
 
 --
 
@@ -18,7 +18,7 @@ It's kind of like a placeholder
 --
 
 # Declaration
-`const`, `let` or `var` 
+## `const`, `let` or `var`
 
 ![Variable Example!](ASSETS_PATH/fundamentals/variables/variableanatomy.png)
 
@@ -41,7 +41,7 @@ myName = 'renvrant';
 --
 
 # Variable Name
-Your variable name is how you use it in code
+## Your variable name is how you use it in code
 
 ![Variable Example!](ASSETS_PATH/fundamentals/variables/variableanatomy.png)
 
@@ -55,14 +55,14 @@ console.log(myName)
 --
 
 # Assignment
-It's an assignment sign, not an equals sign!
+## It's an assignment sign, not an equals sign!
 
 ![Variable Example!](ASSETS_PATH/fundamentals/variables/variableanatomy.png)
 
 --
 
 # Value
-The piece of data the variable represents
+## The piece of data the variable represents
 
 ![Variable Example!](ASSETS_PATH/fundamentals/variables/variableanatomy.png)
 

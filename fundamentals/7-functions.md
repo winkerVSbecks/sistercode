@@ -52,7 +52,7 @@ The function body will then use those values in place of the variables you set a
 ### Telling your function what to do
 
 Functions will do whatever you tell them to do! Any of the lines of code we've showed so far can work inside of a function.
-Think of each line as instructions for your function to run after another. Your instructions need to be place between a functions
+Think of each line as instructions for your function to run one after another. Your instructions need to be placed between a functions
 curly braces like this:
 
 ```JavaScript
