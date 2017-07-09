@@ -39,8 +39,9 @@ let data = [1, 2, 3, 4];
 data.push(5);
 
 // Loop over all items in an array
-data.forEach(function(value) {
-  console.log(value);
+// The function receives each item and its index one at a time
+data.forEach(function(value, index) {
+  console.log(index, value);
 });
 ```
 
@@ -52,9 +53,9 @@ data.forEach(function(value) {
 
 ### Exercise
 
-1. [Push and Random](https://repl.it/JTUc/2)
-2. [Parse Numbers](https://repl.it/JTTh/5)
-3. [Parse Numbers #2](https://repl.it/JTUy) (advanced challenge 🏋🏽‍)
+1. [Push and Random](https://repl.it/teacher/assignments/245474)
+2. [Parse Numbers](https://repl.it/teacher/assignments/245475)
+3. [Parse Numbers #2](https://repl.it/teacher/assignments/245476) (advanced challenge 🏋🏽‍)
 
 --
 
